@@ -16,7 +16,7 @@ int main()
 
 				cin >> m >> n;
 
-			bool input[n+1]{prime};
+			bool input[n-m+1]{prime};
 
 				input[0] = input[1] = {non_prime};
 
