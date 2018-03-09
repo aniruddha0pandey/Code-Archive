@@ -1,38 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-swap(char *left_pointer,char *right_pointer){
-	
+swap(char *left_pointer,char *right_pointer)
+{
 	char temp;
 	
 		temp=*left_pointer;
 		*left_pointer=*right_pointer;
 		*right_pointer=temp;
-	
 }
 
-permute(char *pointer,int left,int right){
-	
+permute(char *pointer,int left,int right)
+{
 	int i;
 		
-		if(left==right){
-			
+		if(left==right)
 			printf("%s\n",pointer);
-			
-		}else{
-			
-			for(i=left;i<=right;i++){
-				
+		else
+			for(i=left;i<=right;i++)
+			{
 				swap((pointer+left),(pointer+i));
-				
 				permute(pointer,left+1,right);
-				
-				swap((pointer+left),(pointer+i)); //backtrack
-				
+				swap((pointer+left),(pointer+i)); //backtrack	
 			}
-			
-		}
-	
 }
 
 main(){
