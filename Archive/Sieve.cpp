@@ -26,7 +26,7 @@ int main()
 							input[i*j] = {non_prime};
 
 				for(int i = m; i <=n; i++)
-					if(input[i] == prime)
+					if(input[i])
 						cout << i << endl;
 
 				puts("");
