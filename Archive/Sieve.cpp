@@ -4,7 +4,7 @@
 #define non_prime false
 using namespace std;
 
-main()
+int main()
 {
 	int T;
 
