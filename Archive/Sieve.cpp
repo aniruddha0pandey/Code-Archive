@@ -10,7 +10,7 @@ int main()
 
 		cin >> T;
 
-		while(T)
+		while(T--)
 		{
 			int m, n;
 
