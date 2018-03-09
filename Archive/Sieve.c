@@ -28,7 +28,7 @@ main()
      
     			for(j = 2; j <= sqr; j++)
     				if(input[j])			           //selecting only primes
-    					for(k = 2; (j * k) <= n; k++)  //marking multiples of 2,3,4...so on upto root of n
+    					for(k = 2; j*k <= n; k++)  //marking multiples of 2,3,4...so on upto root of n
     						input[k * j] = false;      //marking non-primes
      
     			for(j = m; j <= n; j++)
