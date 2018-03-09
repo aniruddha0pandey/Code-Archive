@@ -16,3 +16,10 @@ int main()
 	
 	return 0;
 }
+
+/*
+Input:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Input:
+abcdefghijklmnopqrstuvwxyz
