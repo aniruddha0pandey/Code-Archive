@@ -22,7 +22,7 @@ T dif_tab(T n, vector <T> &array)
 	return sum;
 }
 
-main()
+int main()
 {
 	int n, temp;
 
