@@ -20,7 +20,7 @@ int main()
     		bin(input, RANGE);
     		
     		puts("");
-		}
+	}
 
     return 0;
 }
