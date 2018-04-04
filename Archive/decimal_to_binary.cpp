@@ -4,7 +4,7 @@ using namespace std;
 
 int bin(int n, int i)
 {
-    while(i != -1) (n>>i--&1) ? cout << "1" : cout << "0";
+    while(i!=-1)(n>>i--&1)?cout<<"1":cout<<"0";
 }
 
 int main()
