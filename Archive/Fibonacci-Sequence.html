@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <button onclick="fibo()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function fibo() {
+            var sqrt = Math.sqrt(5);
+            var Phi = (1 + sqrt) / 2;
+            var phi = (1 - sqrt) / 2;
+            var output = "";
+            for(var i = 0; i < 5; i++) {
+                output += (Math.pow(Phi, i) - Math.pow(phi, i)) / sqrt + "<br>";
+            }
+            document.getElementById("demo").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
