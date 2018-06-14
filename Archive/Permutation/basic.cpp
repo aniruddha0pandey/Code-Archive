@@ -10,11 +10,9 @@ char print(int arr[]) {
 }
 
 void permute(int arr[], int size) {
-	if (size == 1) {
+	if (size == 1)
 		print(arr);
-		return;
-	}
-
+		
 	for (int i = 0; i < size; i++) {
 		std::swap(arr[i], arr[size - 1]);
 		permute(arr, size - 1);
