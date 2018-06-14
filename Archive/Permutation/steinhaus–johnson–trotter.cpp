@@ -23,15 +23,13 @@ int maxElement(int arr[], bool dir[], int size, int tmp = 0, int mobile = 0) {
 	for (int i = 0; i < size; i++) {
 		if (dir[arr[i] - 1] == left && i != 0) {
 			if (arr[i] > arr[i - 1] && arr[i] > tmp) {
-				mobile = arr[i];
-				tmp = mobile;
+				tmp = mobile = arr[i];
 			}
 		}
 
 		if (dir[arr[i] - 1] == right && i != (size - 1)) {
 			if (arr[i] > arr[i + 1] && arr[i] > tmp) {
-				mobile = arr[i];
-				tmp = mobile;
+				tmp = mobile = arr[i];
 			}
 		}
 	}
