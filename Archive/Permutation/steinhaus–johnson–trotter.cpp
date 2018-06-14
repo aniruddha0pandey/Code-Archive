@@ -52,14 +52,12 @@ void swapping(int arr[], bool dir[], int pos) {
 }
 
 void changeDir(int arr[], bool dir[], int size, int mobileElement) {
-	for (int i = 0; i < size; i++) {
-		if (arr[i] > mobileElement) {
+	for (int i = 0; i < size; i++)
+		if (arr[i] > mobileElement)
 			if (dir[arr[i] - 1] == right)
 				dir[arr[i] - 1] == left;
 			else if (dir[arr[i] - 1] == left)
 				dir[arr[i] - 1] == right;
-		}
-	}
 }
 
 void permute(int arr[], bool dir[], int size) {
