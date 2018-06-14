@@ -4,33 +4,31 @@
 #define non_prime false
 using namespace std;
 
-int main()
-{
+int main() {
 	int T;
 
-		cin >> T;
+	cin >> T;
 
-		while(T--)
-		{
-			int m, n;
+	while(T--) {
+		int m, n;
 
-				cin >> m >> n;
+		cin >> m >> n;
 
-			bool input[n-m+1]{prime};
+		bool input[n-m+1]{prime};
 
-				input[0] = input[1] = {non_prime};
+		input[0] = input[1] = non_prime;
 
-				for(int i = 2; i <= sqrt(n); i++)
-					if(input[i])
-						for(int j = 2; i*j <= n; j++)
-							input[i*j] = {non_prime};
+		for(int i = 2; i <= sqrt(n); i++)
+			if(input[i])
+				for(int j = 2; i*j <= n; j++)
+					input[i*j] = {non_prime};
 
-				for(int i = m; i <=n; i++)
-					if(input[i])
-						cout << i << endl;
+		for(int i = m; i <=n; i++)
+			if(input[i])
+				cout << i << endl;
 
-				puts("");
-		}
+		puts("");
+	}
 
 	return 0;
 }
