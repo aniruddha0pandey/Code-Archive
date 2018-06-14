@@ -7,6 +7,9 @@ bool left = false;
 inline bool moveLeft(int arr[], int i, int tmp) { return arr[i] > arr[i - 1] && arr[i] > tmp; }
 inline bool moveRight(int arr[], int i, int tmp) { return arr[i] > arr[i + 1] && arr[i] > tmp; }
 
+inline bool dirLeft(int arr[], bool dir[], int i, int size) { return dir[arr[i] - 1] == left && i != 0; }
+inline bool dirRight(int arr[], bool dir[], int i, int size) { return dir[arr[i] - 1] == right && i != (size - 1); }
+
 // print new set of permuted array
 char print(int arr[], int size) {
 	for (int i = 0; i < size; i++)
@@ -23,11 +26,11 @@ int factorial(int size, int tmp = 1) {
 // returns max mobile int from array
 int maxElement(int arr[], bool dir[], int size, int tmp = 0, int mobile = 0) {
 	for (int i = 0; i < size; i++) {
-		if (dir[arr[i] - 1] == left && i != 0)
+		if (dirLeft(arr, dir, i, size))
 			if (moveLeft(arr, i, tmp))
 				tmp = mobile = arr[i];
 
-		if (dir[arr[i] - 1] == right && i != (size - 1))
+		if (dirRight(arr, dir, i, size))
 			if (moveRight(arr, i, tmp))
 				tmp = mobile = arr[i];
 	}
