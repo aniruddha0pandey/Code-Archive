@@ -68,12 +68,10 @@ void permute(int arr[], bool dir[], int size) {
 	swapping(arr, dir, positionElement);
 	changeDir(arr, dir, size, mobileElement);
 	print(arr, size);
-
 }
 
 void solve(int arr[], int size) {
 	bool dir[size] = {left};
-
 	for (int i = 0; i < factorial(size); i++) {
 		permute(arr, dir, size);
 	}
