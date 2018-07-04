@@ -20,9 +20,7 @@ T dif_tab(T n, vector <T> &array) {
 
 int main () {
 	int n, temp;
-
 	cin >> n;
-
 	vector <int> array;
 
 	loop (0, n) {
