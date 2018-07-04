@@ -15,19 +15,16 @@ void subset(int arr[],int data[],int start,int end,int index,int r) {
 	}
 
 	for (i=start;i<=end&&end-i+1>=r-index;i++) {
-	    	
 	    data[index]=arr[i];
 	    subset(arr,data,i+1,end,index+1,r);
-	        
 	}
-    
 }
  
 void printsubset(int arr[],int n,int r) {
     
 	int data[r];
 	
-    subset(arr,data,0,n-1,0,r);
+	subset(arr,data,0,n-1,0,r);
     	
 }
 
