@@ -1,4 +1,4 @@
-gcc -o subset subset.c -lm
+// gcc -o subset subset.c -lm
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
