@@ -1,3 +1,4 @@
+// incomplete
 #include <iostream>
 #include <cmath>
 #define prime true
@@ -32,6 +33,3 @@ int main() {
 
 	return 0;
 }
-
-/*
-This code is obscure and only work as logic.
