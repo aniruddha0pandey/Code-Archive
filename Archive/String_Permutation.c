@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-swap(char *left_pointer, char *right_pointer)
+void swap(char *left_pointer, char *right_pointer)
 {
 	char temp;
 	
@@ -10,7 +10,7 @@ swap(char *left_pointer, char *right_pointer)
 	*right_pointer = temp;
 }
 
-permute(char *pointer, int left, int right)
+void permute(char *pointer, int left, int right)
 {
 	int i;
 
@@ -25,7 +25,7 @@ permute(char *pointer, int left, int right)
 		}
 }
 
-main(){
+int main(){
 	
 	char string[] = "ABC";
 	int n = strlen(string);
@@ -33,5 +33,4 @@ main(){
 	permute(string, 0, n-1);
 
 	return 0;
-
 }
