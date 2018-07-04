@@ -4,40 +4,33 @@
 using namespace std;
 
 template <typename T>
-T dif_tab(T n, vector <T> &array)
-{
+T dif_tab(T n, vector <T> &array) {
 	int save[n], sum = 0;
 
-		while(n--)
-		{
-			loop(0, n)
-			{
-				save[i] = array[i+1] - array[i];
-				array[i] = save[i];
-			}
-			
-			sum += array[n];
-		}
+	while (n--) {
+		loop (0, n) {
+			save[i] = array[i+1] - array[i];
+			array[i] = save[i];
+		}	
+		sum += array[n];
+	}
 
 	return sum;
 }
 
-int main()
-{
+int main () {
 	int n, temp;
 
-		cin >> n;
+	cin >> n;
 
 	vector <int> array;
 
-		loop(0, n)
-		{
-			cin >> temp;
-			array.push_back(temp);
-		}
+	loop (0, n) {
+		cin >> temp;
+		array.push_back(temp);
+	}
 
-		cout << dif_tab(n, array);
-
+	cout << dif_tab(n, array);
 	return 0;
 }
 
