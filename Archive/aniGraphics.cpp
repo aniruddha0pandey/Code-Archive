@@ -1,10 +1,10 @@
 #include <iostream>
 
-const char vertical = 186;
-const char horizontal = 205;
-const char topLeft = 201;
-const char topRight = 187;
-const char bottomLeft = 200;
+const char vertical    = 186;
+const char horizontal  = 205;
+const char topLeft     = 201;
+const char topRight    = 187;
+const char bottomLeft  = 200;
 const char bottomRight = 188;
 
 void top(int width) {
