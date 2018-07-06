@@ -1,6 +1,39 @@
+// https://www.codesdope.com/blog/article/backtracking-explanation-and-n-queens-problem/
+// https://www.geeksforgeeks.org/backtracking-set-3-n-queen-problem/
+// https://www.hackerearth.com/practice/basic-programming/recursion/recursion-and-backtracking/tutorial/
+// file:///H:/Programming/PDF/H19-RecBacktrackExamples.pdf
+
 #include <iostream>
 
-inline bool allQueenPlaced(int N, int col) { return (col >= N); }
+inline bool allQueenPlaced(int N) { return (N == 0); }
+
+inline bool horizontalClear() {
+
+}
+
+inline bool diagonalsClear() {
+
+}
+
+
+bool blitz() {
+	return (horizontalClear() && diagonalsClear());
+}
+
+bool nQueen(int N) {
+	int board[N][N] = {};
+
+	if ( allQueenPlaced(N) )
+		return true;
+
+	for (int i = 0; i < N; i++) {
+		if ( blitz() ) {
+
+		}
+	}
+
+	return false;
+}
 
 void print(int *board, int N) {
 	for (int row = 0; row < N; row++) {
@@ -8,23 +41,6 @@ void print(int *board, int N) {
 			std::cout << *((board + row * N) + col) << " ";
 		puts("");
 	}
-}
-
-bool blitz() {
-
-}
-
-bool nQueen(int N) {
-	int board[N][N] = {};
-
-	if ( allQueenPlaced(N, col) )
-		return true;
-
-	for (int i = 0; i < N; i++) {
-
-	}
-
-	return false;
 }
 
 int main(void) {
