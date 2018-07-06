@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 
 inline bool allQueenPlaced(int N, int col) { return (col >= N); }
 
