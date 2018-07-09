@@ -4,7 +4,6 @@
 // file:///H:/Programming/PDF/H19-RecBacktrackExamples.pdf
 
 #include <iostream>
-#define COLUMN N
 
 inline bool allQueenPlaced(int N) { return (N == 0); }
 
@@ -31,14 +30,12 @@ void remove() {
 bool nQueen(int N) {
 	int board[N][N] = {};
 
-	if ( allQueenPlaced(N) )
+	if ( allQueenPlaced(N) ) {
+		print((int *)board, N);
 		return true;
-
-	for (int i = 0; i < COLUMN; i++) {
-		
+	} else {
+		return false;
 	}
-
-	return false;
 }
 
 void print(int *board, int N) {
@@ -53,7 +50,6 @@ int main(void) {
 	int N;
 	std::cin >> N;
 	if ( nQueen(N) )
-		print((int *)board, N);
 		std::cout << "\nProgram Stops Exploring on Solution...";
 	else
 		std::cout << "Solution Doesn't Exist...";	
