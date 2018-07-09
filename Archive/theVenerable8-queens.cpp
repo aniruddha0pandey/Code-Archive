@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-inline bool allQueenPlaced(int N) {}
+inline bool allQueenPlaced(int N) { return (col >= N); }
 
 inline bool horizontalClear() {
 
@@ -27,10 +27,10 @@ void remove() {
 	
 }
 
-bool nQueen(int N) {
+bool nQueen(int N, int col = 0) {
 	int board[N][N] = {};
 
-	if ( allQueenPlaced(N) ) {
+	if ( allQueenPlaced(N, col) ) {
 		print((int *)board, N);
 		return true;
 	} else {
