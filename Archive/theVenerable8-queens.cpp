@@ -57,7 +57,8 @@ int main(void) {
 	std::cin >> N;
 	if ( nQueen(N) )
 		print((int *)board, N);
+		std::cout << "\nProgram Stops Exploring on Solution...";
 	else
-		std::cout << "Solution doesn't exist...";	
+		std::cout << "Solution Doesn't Exist...";	
 	return 0;
 }
