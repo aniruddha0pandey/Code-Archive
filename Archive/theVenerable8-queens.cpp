@@ -4,6 +4,7 @@
 // file:///H:/Programming/PDF/H19-RecBacktrackExamples.pdf
 
 #include <iostream>
+#define COLUMN N
 
 inline bool allQueenPlaced(int N) { return (N == 0); }
 
@@ -33,12 +34,8 @@ bool nQueen(int N) {
 	if ( allQueenPlaced(N) )
 		return true;
 
-	for (int i = 0; i < N; i++) {
-		if ( blitz() ) {
-
-		} else {
-			
-		}
+	for (int i = 0; i < COLUMN; i++) {
+		
 	}
 
 	return false;
