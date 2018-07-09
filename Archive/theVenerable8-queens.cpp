@@ -17,7 +17,7 @@ inline bool diagonalsClear() {
 
 
 bool blitz() {
-	return (horizontalClear() && diagonalsClear());
+	return !(horizontalClear() && diagonalsClear());
 }
 
 bool nQueen(int N) {
