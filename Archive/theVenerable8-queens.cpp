@@ -15,9 +15,16 @@ inline bool diagonalsClear() {
 
 }
 
-
 bool blitz() {
 	return !(horizontalClear() && diagonalsClear());
+}
+
+void place() {
+
+}
+
+void remove() {
+	
 }
 
 bool nQueen(int N) {
@@ -51,6 +58,6 @@ int main(void) {
 	if ( nQueen(N) )
 		print((int *)board, N);
 	else
-		std::cout << "Solution doesn't exist";	
+		std::cout << "Solution doesn't exist...";	
 	return 0;
 }
