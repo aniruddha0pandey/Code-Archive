@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-inline bool allQueenPlaced(int N) { return (N == 0); }
+inline bool allQueenPlaced(int N) {}
 
 inline bool horizontalClear() {
 
