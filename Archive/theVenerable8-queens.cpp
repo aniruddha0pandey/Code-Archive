@@ -1,5 +1,3 @@
-// https://www.hackerearth.com/practice/basic-programming/recursion/recursion-and-backtracking/tutorial/
-
 #include<iostream>
 
 inline bool allQueenPlaced(int N, int col) { return (col >= N); }
