@@ -1,3 +1,5 @@
+// TODO : delay animation & object orientation
+
 #include<iostream>
 
 inline bool allQueenPlaced(int N, int col) { return (col >= N); }
