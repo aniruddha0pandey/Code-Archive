@@ -47,16 +47,15 @@ bool nQueen(int* board, int N, int col = 0) {
 		print((int*)board, N);
 		return true;
 	} else {
-    	for (int i = 0; i < N; i++) {
-    		if ( (!blitz((int*)board, N, i, col)) && repeat((int*)board, N, i, col)) {
-    			placeQueen((int*)board, N, i, col);
-    			if ( nQueen((int*)board, N, col + 1) )
-    				return true;
-    			removeQueen((int*)board, N, i, col);
-    		}
-    	}
-
-    	return false;
+		for (int i = 0; i < N; i++) {
+			if ( (!blitz((int*)board, N, i, col)) && repeat((int*)board, N, i, col)) {
+				placeQueen((int*)board, N, i, col);
+				if ( nQueen((int*)board, N, col + 1) )
+					return true;
+				removeQueen((int*)board, N, i, col);
+			}
+		}
+		return false;
 	}
 }
 
