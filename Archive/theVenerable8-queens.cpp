@@ -66,6 +66,6 @@ int main() {
 	if ( nQueen((int*)board, N) )
 		std::cout << "\nProgram Stops Exploring on Solution...";
 	else
-		std::cout << "Solution Doesn't Exist...";
+		std::cout << "\nSolution Doesn't Exist...";
 	return 0;
 }
