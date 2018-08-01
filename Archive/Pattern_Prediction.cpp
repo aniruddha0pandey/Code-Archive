@@ -4,7 +4,7 @@
 using namespace std;
 
 template <typename T>
-T dif_tab(T n, vector <T> &array) {
+T dif_tab(T n, vector<T>& array) {
 	int save[n], sum = 0;
 	while (n--) {
 		loop (0, n) {
@@ -19,7 +19,7 @@ T dif_tab(T n, vector <T> &array) {
 int main () {
 	int n, temp;
 	cin >> n;
-	vector <int> array;
+	vector<int> array;
 	loop (0, n) {
 		cin >> temp;
 		array.push_back(temp);
