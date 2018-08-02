@@ -5,4 +5,4 @@ Except as otherwise noted, the content of this page is licensed under the [Creat
 
 This program is distributed in the hope that it will be useful, but **WITHOUT ANY WARRANTY**; without even the implied warranty of **MERCHANTABILITY** or **FITNESS FOR A PARTICULAR PURPOSE**.
 
-This documentation undoubtedly has bugs; if you find some, please file them [here](/pulls).
+This documentation undoubtedly has bugs; if you find some, please file them [here](Code_Archive/pulls).
