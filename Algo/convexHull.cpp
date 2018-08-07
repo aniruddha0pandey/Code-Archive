@@ -1,2 +1,2 @@
-// Graham Scan
+// Graham Scan Implementation
 // Gift Wrapping
