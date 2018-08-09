@@ -7,14 +7,15 @@ Maintenance    :
 Termination    :
 """
 
-for j = 2 to len(list)
-    key = list[j]
-    i = j - 1
-    while i > 0 and list[i] > key
-      list[i + 1] = list[i]
-      i = i - 1
-    list[i + 1] = key
+def insertionSort(list):
+    for j = 2 to len(list)
+        key = list[j]
+        i = j - 1
+        while i > 0 and list[i] > key
+          list[i + 1] = list[i]
+          i = i - 1
+        list[i + 1] = key
 
 if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
-    print(insertionSort())
+    print(insertionSort(list))
