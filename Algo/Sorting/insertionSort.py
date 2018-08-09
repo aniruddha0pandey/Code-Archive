@@ -15,7 +15,7 @@ def insertionSort(list):
             list[i + 1] = list[i]
             i = i - 1
         list[i + 1] = key
-        
+
     for i in list:
         print(i, list[i])
 
