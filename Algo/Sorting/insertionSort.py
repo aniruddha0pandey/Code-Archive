@@ -16,8 +16,7 @@ def insertionSort(list):
             i = i - 1
         list[i + 1] = key
 
-    for i in list:
-        print(i, list[i])
+    return list
 
 if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
