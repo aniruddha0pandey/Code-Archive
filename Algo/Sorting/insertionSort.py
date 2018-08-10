@@ -15,7 +15,6 @@ def insertionSort(list):
             list[i + 1] = list[i]
             i = i - 1
         list[i + 1] = key
-
     return list
 
 if __name__ == "__main__":
