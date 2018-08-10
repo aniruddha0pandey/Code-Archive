@@ -5,7 +5,7 @@ Initialization : The 'loop invariant' holds before the first loop iteration:
                  The subarray a[1 ... j-1] therefore consists of a[0]. Moreover, this subarray is sorted.
 Maintenance    : Each iteration maintain the 'loop invariant':
                  Incrementing 'j' for the next iteration preserves 'loop invriant' in a[1 ... j-1].
-Termination    :
+Termination    : Observing the subarray a[1 ... j-1] is infact the entire array, we conclude the entire array sorted.
 """
 
 def insertionSort(list):
