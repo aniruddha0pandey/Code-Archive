@@ -14,7 +14,7 @@ def insertionSort(list, j = 1):
         key = list[j]                                     # key : "elements also called keys".
         i = j - 1                                         # i   : "evaluated key index".
         # inserting current key into sorted sequence
-        while i > 0 and list[i] > key:
+        while i >= 0 and list[i] > key:
             list[i + 1] = list[i]
             i = i - 1
         list[i + 1] = key
