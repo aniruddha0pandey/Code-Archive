@@ -9,9 +9,9 @@ Termination    : Observing the subarray a[1 ... j-1] is infact the entire array,
 """
 
 def insertionSort(list):
-    for j = 1 to len(list):                 # j   : "current key".
+    for j = 1 to len(list):                 # j   : "current key index".
         key = list[j]                       # key : "elements also called keys".
-        i = j - 1
+        i = j - 1                           # i   : "evaluated key index".
         while i > 0 and list[i] > key:
             list[i + 1] = list[i]
             i = i - 1
