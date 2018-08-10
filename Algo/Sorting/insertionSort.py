@@ -8,9 +8,9 @@ Maintenance    : Each iteration maintain the 'loop invariant':
 Termination    : Observing the subarray a[1 ... j-1] is infact the entire array, we conclude the entire array sorted.
 """
 
-def insertionSort(list):
+def insertionSort(list, j = 1):
     # traversing throughout list
-    for j = 1 to len(list):                               # j   : "current key index".
+    for j in range(len(list)):                               # j   : "current key index".
         key = list[j]                                     # key : "elements also called keys".
         i = j - 1                                         # i   : "evaluated key index".
         # inserting current key into sorted sequence
