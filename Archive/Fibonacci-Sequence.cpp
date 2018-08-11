@@ -1,7 +1,7 @@
 #include <iostream>
 
 int
-fibo(int n) {
+fibo (int n) {
 	return (n < 1) ? 1 : n * fibo(n - 1);
 }
 
