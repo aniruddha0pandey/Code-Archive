@@ -9,11 +9,11 @@ Termination    : Observing the subarray a[1 ... j-1] is infact the entire array,
 Analysis       : 
 """
 
-def insertionSort(list, j = 1):                           # traversing throughout list
-    for j in range(len(list)):                            # j   : "current key index".
-        key = list[j]                                     # key : "elements also called keys".
-        i = j - 1                                         # i   : "evaluated key index".
-        while i >= 0 and list[i] > key:                   # inserting current key into sorted sequence
+def insertionSort(list, j = 1):                        # traversing throughout list
+    for j in range(len(list)):                         # j   : "current key index".
+        key = list[j]                                  # key : "elements also called keys".
+        i = j - 1                                      # i   : "evaluated key index".
+        while i >= 0 and list[i] > key:                # inserting current key into sorted sequence
             list[i + 1] = list[i]
             i = i - 1
         list[i + 1] = key
