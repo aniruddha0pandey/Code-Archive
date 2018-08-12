@@ -3,6 +3,6 @@
 
 int main () {
 	int x(10), y(20);
-	std::cout << SWAP(x, y);
+	SWAP(x, y);
 	return 0;
 }
