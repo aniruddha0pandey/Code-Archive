@@ -11,7 +11,7 @@ int main (void) {
   double t = clock();
   int x, y;
   std::cin >> x >> y;
-  swap(&x, &y);
+  swap (&x, &y);
   std::cout << "Execution Time   : " << (clock() - t) / CLOCKS_PER_SEC / 100.0 << std::endl;
   std::cout << "Process Returned : " << "0 (0x0)" << std::endl;
   return 0;
