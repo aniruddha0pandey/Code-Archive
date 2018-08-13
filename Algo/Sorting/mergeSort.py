@@ -1,3 +1,15 @@
+""" docstring
+Input          : 
+Output         : 
+Initialization : 
+                 
+Maintenance    : 
+                 
+Termination    : 
+Paradigm       : Divide and Conquer
+Analysis       : 
+"""
+
 def merge(left, right):
     out = []
     while (len(left) > 0 and len(right) > 0): 
