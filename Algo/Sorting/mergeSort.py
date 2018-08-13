@@ -12,8 +12,7 @@ Analysis       :
 
 from inliner import inline
 
-def merge(left, right):
-    newList = []
+def merge(left, right, newList = []):
     while (len(left) > 0 and len(right) > 0): 
         if (left[0] <= right[0]):
             newList.append(left[0])
