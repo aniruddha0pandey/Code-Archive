@@ -11,21 +11,21 @@ Analysis       :
 """
 
 def merge(left, right):
-    out = []
+    newList = []
     while (len(left) > 0 and len(right) > 0): 
         if (left[0] <= right[0]):
-            out.append(left[0])
+            newList.append(left[0])
             del left[0]
         else:
-            out.append(right[0])
+            newList.append(right[0])
             del right[0]
     while (len(left) > 0):
-        out.append(left[0])
+        newList.append(left[0])
         del left[0]
     while (len(right) > 0):
-        out.append.right[0])
+        newList.append.right[0])
         del right[0]
-    return out
+    return newList
 
 def divide(list):
     mid = len(arr) / 2
