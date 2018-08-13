@@ -11,11 +11,9 @@ Analysis       :
 """
 
 def insertionSort(list):
-    # traversing throughout list
     for index in range(1, len(list)):
         key = list[index]
         pos = index - 1
-        # inserting current key into sorted sequence
         while pos >= 0 and list[pos] > key:
             list[pos + 1] = list[pos]
             pos = pos - 1
