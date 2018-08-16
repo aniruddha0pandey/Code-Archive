@@ -2,7 +2,7 @@
 
 int
 fibo (int n) {
-	return (n < 1) ? 1 : n + fibo(n - 1);
+	return (n < 1) ? 1 : n * fibo(n - 1);
 }
 
 int
