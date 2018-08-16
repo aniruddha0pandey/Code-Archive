@@ -1,3 +1,5 @@
+// n: {1 ≤ n ≤ 12}
+
 #include <iostream>
 
 int
