@@ -12,7 +12,7 @@ int main (void) {
   int x, y;
   std::cin >> x >> y;
   swap (&x, &y);
-  std::cout << "Execution Time   : " << (double)(clock() - t) / CLOCKS_PER_SEC << " s" << std::endl;
+  std::cout << "Execution Time   : " << double(clock() - t) / CLOCKS_PER_SEC << " s" << std::endl;
   std::cout << "Process Returned : " << "0 (0x0)" << std::endl;
   return 0;
 }
