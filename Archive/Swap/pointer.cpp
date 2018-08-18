@@ -8,12 +8,11 @@ void swap (int* a, int* b, int tmp) {
 }
 
 int main (void) {
-  clock_t start = clock();
+  clock_t t = clock();
   int x, y;
   std::cin >> x >> y;
   swap (&x, &y);
-  clock_t end = clock();
-  std::cout << "Execution Time   : " << (double)(end - start) / CLOCKS_PER_SEC << std::endl;
+  std::cout << "Execution Time   : " << (double)(clock() - t) / CLOCKS_PER_SEC << " s" << std::endl;
   std::cout << "Process Returned : " << "0 (0x0)" << std::endl;
   return 0;
 }
