@@ -31,9 +31,9 @@ def merge(leftList, rightList, newList = []):
         del rightList[0]
     return newList
 
-def divide(list):
-    mid = len(arr) / 2
-    return arr[:mid], arr[mid:]
+def divide(mainList):
+    mid = len(mainList) / 2
+    return mainList[:mid], mainList[mid:]
 
 @inline
 def end(mainList):
