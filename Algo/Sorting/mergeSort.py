@@ -15,20 +15,20 @@ Analysis       :
 
 from inliner import inline
 
-def merge(left, right, newList = []):
-    while (len(left) > 0 and len(right) > 0): 
-        if (left[0] <= right[0]):
-            newList.append(left[0])
-            del left[0]
+def merge(leftList, rightList, newList = []):
+    while (len(leftList) > 0 and len(rightList) > 0): 
+        if (leftList[0] <= rightList[0]):
+            newList.append(leftList[0])
+            del leftList[0]
         else:
-            newList.append(right[0])
-            del right[0]
-    while (len(left) > 0):
-        newList.append(left[0])
-        del left[0]
-    while (len(right) > 0):
-        newList.append.(right[0])
-        del right[0]
+            newList.append(rightList[0])
+            del rightList[0]
+    while (len(leftList) > 0):
+        newList.append(leftList[0])
+        del leftList[0]
+    while (len(rightList) > 0):
+        newList.append.(rightList[0])
+        del rightList[0]
     return newList
 
 def divide(list):
@@ -36,14 +36,14 @@ def divide(list):
     return arr[:mid], arr[mid:]
 
 @inline
-def end(list):
-    return len(list) <= 1
+def end(mainList):
+    return len(mainList) <= 1
   
-def mergeSort(list):
-    if end(list):
-        return list
-    left, right = divide(list)
-    return merge(mergeSort(left), mergeSort(right))
+def mergeSort(mainList):
+    if end(mainList):
+        return mainList
+    leftList, rightList = divide(mainList)
+    return merge(mergeSort(leftList), mergeSort(rightList))
 
 if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
