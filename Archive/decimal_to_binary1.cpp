@@ -6,7 +6,7 @@ char
 bin(int n, int i) {
     while(i!=-1)
     	(n>>i--&1) ? cout << "1" : cout << "0";
-    puts("");
+    return puts("");
 }
 
 int
