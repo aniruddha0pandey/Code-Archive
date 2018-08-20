@@ -13,8 +13,6 @@ const long long inf = (long long) 1e18;
 
 int main (void) {
   boost();
-  // Seed the random-number generator with current time so that
-  // the numbers will be different every time we run <rand()>.
-  srand( (unsigned)time( NULL ) );
+  srand( (unsigned)time( NULL ) ); // Seed the random-number generator with current time so that the numbers will be different every time we run <rand()>.
   return 0;
 }
