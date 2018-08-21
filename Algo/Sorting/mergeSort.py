@@ -15,6 +15,10 @@ Analysis       :
 
 from inliner import inline
 
+@inline
+def end(list):
+    return len(list) <= 1
+
 def merge(leftList, rightList, newList = []):
     while (len(leftList) > 0 and len(rightList) > 0): 
         if (leftList[0] <= rightList[0]):
@@ -34,10 +38,6 @@ def merge(leftList, rightList, newList = []):
 def divide(mainList):
     mid = len(mainList) / 2
     return mainList[:mid], mainList[mid:]
-
-@inline
-def end(mainList):
-    return len(mainList) <= 1
   
 def mergeSort(mainList):
     if end(mainList):
