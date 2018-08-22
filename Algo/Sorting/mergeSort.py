@@ -108,3 +108,4 @@ if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
     print(mergeSort1(list))
     print(mergeSort2(list))
+    print(mergeSort3(list))
