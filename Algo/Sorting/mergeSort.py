@@ -12,7 +12,7 @@ Analysis       :
 
 # https://github.com/liuxinyu95/AlgoXY/blob/algoxy/sorting/merge-sort/src/mergesort.py
 
-########################################################################
+######################################################################## pure-functional
 from inliner import inline
 
 @inline
@@ -45,7 +45,7 @@ def mergeSort1(mainList):
     leftList, rightList = divide1(mainList)
     return merge1(mergeSort1(leftList), mergeSort1(rightList))
 
-########################################################################
+######################################################################## functional with sentinel
 from inliner import inline
 
 @inline
@@ -78,7 +78,7 @@ def mergeSort2(mainList):
     leftList, rightList = divide2(mainList)
     return merge2(mergeSort2(leftList), mergeSort2(rightList))
   
-########################################################################
+######################################################################## verbose version
 from inliner import inline
 
 @inline
@@ -102,10 +102,21 @@ def mergeSort3(mainList):
     rightList = [x for x in mainList[divide3(mainList):]]
     return merge3(mergeSort3(leftList), mergeSort3(rightList))
   
-########################################################################
+######################################################################## bottom-up approach
+
+def merge4(leftList, rightList, newList = []):
+    while leftList != [] and rightList != []: 
+        
+
+def mergeSort4(mainList):
+    
+  
+######################################################################## main
 
 if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
     print(mergeSort1(list))
     print(mergeSort2(list))
     print(mergeSort3(list))
+    print(mergeSort4(list))
+    
