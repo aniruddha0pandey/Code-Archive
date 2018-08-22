@@ -21,11 +21,12 @@ inline void boost(void) {
 
 void
 scan (const int& n = 0) {
-    // For Win32 <_getchar_nolock();> and <_putchar_nolock(c);>
+    // For Win32 use <_getchar_nolock();> and <_putchar_nolock(c);>
     register int c = getchar_unlocked();
-    for(; c < '0' || c > '9'; c = getchar_unlocked());
-    for(; c > '/' && c < ':'; c = getchar_unlocked())
-        n = (n << 1) +(n << 3)+ (c - '0');
+    for (; c < '0' || c > '9'; c = getchar_unlocked());
+    for (; c > '/' && c < ':'; c = getchar_unlocked())
+        n = (n << 1) + (n << 3) + (c - '0');
+    if (c == '-') n = ~(n - 1);
 }
 
 int main (void) {
