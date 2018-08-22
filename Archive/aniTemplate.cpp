@@ -20,7 +20,7 @@ inline void boost (void) {
 }
 
 void
-scan (const int& n = 0) {
+scan (int& n = 0) {
     // For Win32 use <_getchar_nolock();> and <_putchar_nolock(c);>
     register int c = getchar_unlocked();
     for (; c < '0' || c > '9'; c = getchar_unlocked());
