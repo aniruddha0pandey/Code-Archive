@@ -107,7 +107,7 @@ def mergeSort3(mainList):
 def merge4(leftList, rightList, newList = []):
     while leftList != [] and rightList != []: 
         newList.append(leftList.pop(0) if leftList[0] < rightList[0] else rightList.pop(0))
-    return newList + (leftList if leftList !=[] else rightList)
+    return newList + (leftList if leftList != [] else rightList)
 
 def mergeSort4(mainList):
     slaveList = [[x] for x in mainList]
