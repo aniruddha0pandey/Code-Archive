@@ -25,7 +25,7 @@ def merge(leftList, rightList, newList = []):
         newList.append(leftList[0])
         del leftList[0]
     while (len(rightList) > 0):
-        newList.append.(rightList[0])
+        newList.append(rightList[0])
         del rightList[0]
     return newList
 
