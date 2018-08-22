@@ -10,7 +10,6 @@ Paradigm       : Divide and Conquer
 Analysis       : 
 """
 
-# https://medium.freecodecamp.org/a-functional-approach-to-merge-sort-and-algorithms-in-general-bbc12457eeb0
 # https://github.com/liuxinyu95/AlgoXY/blob/algoxy/sorting/merge-sort/src/mergesort.py
 
 ########################################################################
