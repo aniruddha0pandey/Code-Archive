@@ -13,12 +13,6 @@ Analysis       :
 # https://medium.freecodecamp.org/a-functional-approach-to-merge-sort-and-algorithms-in-general-bbc12457eeb0
 # https://github.com/liuxinyu95/AlgoXY/blob/algoxy/sorting/merge-sort/src/mergesort.py
 
-from inliner import inline
-
-@inline
-def end(list):
-    return len(list) <= 1
-
 def merge(leftList, rightList, newList = []):
     while (len(leftList) > 0 and len(rightList) > 0): 
         if (leftList[0] <= rightList[0]):
@@ -40,7 +34,7 @@ def divide(mainList):
     return mainList[:mid], mainList[mid:]
   
 def mergeSort(mainList):
-    if end(mainList):
+    if len(mainList) <= 1:
         return mainList
     leftList, rightList = divide(mainList)
     return merge(mergeSort(leftList), mergeSort(rightList))
