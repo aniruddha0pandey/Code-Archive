@@ -44,19 +44,19 @@ def mergeSort1(mainList):
 ########################################################################
   
 def merge2(leftList, rightList, newList = [], iLeft = 0, iRight = 0):
-    while (len(leftList) > 0 and len(rightList) > 0): 
-        if (leftList[0] <= rightList[0]):
-            newList.append(leftList[0])
-            del leftList[0]
+    while (iLeft < len(leftList) and iRight < len(rightList)): 
+        if (leftList[iLeft] <= rightList[iRight]):
+            newList.append(leftList[iLeft])
+            iLeft = iLeft + 1
         else:
-            newList.append(rightList[0])
-            del rightList[0]
-    while (len(leftList) > 0):
-        newList.append(leftList[0])
-        del leftList[0]
-    while (len(rightList) > 0):
-        newList.append(rightList[0])
-        del rightList[0]
+            newList.append(rightList[iRight])
+            iRight = iRight + 1
+    while (iLeft < len(leftList)):
+        newList.append(leftList[iLeft])
+        iLeft = iLeft + 1
+    while (iRight < len(rightList)):
+        newList.append(rightList[iRight])
+        iRight = iRight + 1 
     return newList
 
 def divide2(mainList):
