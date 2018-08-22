@@ -3,16 +3,14 @@
 using namespace std;
 
 char
-bin(int n, int i) {
-    while(i!=-1)
-    	(n>>i--&1) ? cout << "1" : cout << "0";
+bin (int n, int i) {
+    while (i!=-1) (n>>i--&1) ? cout << "1" : cout << "0";
     return puts("");
 }
 
 int
-main(void) {
+main (void) {
     int T, input;
- 
     cin >> T;
     	
     while (T--) {
