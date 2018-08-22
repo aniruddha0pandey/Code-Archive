@@ -33,7 +33,6 @@ int main (void) {
   boost();
   int n;
   scan (n);
-  // Seed the random-number generator with current time so that the numbers will be different every time we run <rand()>.
-  srand( (unsigned)time( NULL ) );
+  srand( (unsigned)time( NULL ) ); // Seed the random-number generator with current time so that the numbers will be different every time we run <rand()>.
   return 0;
 }
