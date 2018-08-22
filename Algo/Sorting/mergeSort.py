@@ -14,6 +14,11 @@ Analysis       :
 # https://github.com/liuxinyu95/AlgoXY/blob/algoxy/sorting/merge-sort/src/mergesort.py
 
 ########################################################################
+from inliner import inline
+
+@inline
+def end(list):
+    return len(list) <= 1
 
 def merge1(leftList, rightList, newList = []):
     while (len(leftList) > 0 and len(rightList) > 0): 
@@ -36,27 +41,32 @@ def divide1(mainList):
     return mainList[:mid], mainList[mid:]
   
 def mergeSort1(mainList):
-    if len(mainList) <= 1:
+    if end(mainList):
         return mainList
     leftList, rightList = divide1(mainList)
     return merge1(mergeSort1(leftList), mergeSort1(rightList))
 
 ########################################################################
+from inliner import inline
+
+@inline
+def increment(i):
+    return i = i + 1
   
 def merge2(leftList, rightList, newList = [], iLeft = 0, iRight = 0):
     while (iLeft < len(leftList) and iRight < len(rightList)): 
         if (leftList[iLeft] <= rightList[iRight]):
             newList.append(leftList[iLeft])
-            iLeft = iLeft + 1
+            increment(iLeft)
         else:
             newList.append(rightList[iRight])
-            iRight = iRight + 1
+            increment(iRight)
     while (iLeft < len(leftList)):
         newList.append(leftList[iLeft])
-        iLeft = iLeft + 1
+        increment(iLeft)
     while (iRight < len(rightList)):
         newList.append(rightList[iRight])
-        iRight = iRight + 1 
+        increment(iRight)
     return newList
 
 def divide2(mainList):
