@@ -10,8 +10,6 @@ Paradigm       : Divide and Conquer
 Analysis       : 
 """
 
-# https://github.com/liuxinyu95/AlgoXY/blob/algoxy/sorting/merge-sort/src/mergesort.py
-
 ######################################################################## pure-functional
 from inliner import inline
 
