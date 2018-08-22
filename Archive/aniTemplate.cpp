@@ -10,7 +10,7 @@ const long long inf = (long long) 1e18;
 
 template <class T> inline T
 gcd (T x, T y) {
-  if(!y) return x;
+  if (!y) return x;
   return gcd (y, x%y);
 }
 
@@ -32,7 +32,7 @@ scan (const int& n = 0) {
 int main (void) {
   boost();
   int n;
-  scan (n);
+  scan(n);
   srand( (unsigned)time( NULL ) ); // Seed the random-number generator with current time so that the numbers will be different every time we run <rand()>.
   return 0;
 }
