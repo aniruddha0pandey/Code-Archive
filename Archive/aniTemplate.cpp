@@ -11,7 +11,7 @@ const long long inf = (long long) 1e18;
 template <class T> inline T
 gcd (T x, T y) {
   if(!y) return x;
-  return gcd(y, x%y);
+  return gcd (y, x%y);
 }
 
 inline void boost (void) {
