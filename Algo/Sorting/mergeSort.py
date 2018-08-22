@@ -79,7 +79,31 @@ def mergeSort2(mainList):
     return merge2(mergeSort2(leftList), mergeSort2(rightList))
   
 ########################################################################
+from inliner import inline
+
+@inline
+def increment(i):
+    return i = i + 1
   
+def merge3(leftList, rightList, newList = [], i = 0):
+    while leftList != [] and rightList != []: 
+        newList[i] = leftList.pop(0) if leftList[0] < rightList[0] else rightList.pop(0)
+        increment(i)
+    newList[i:] = leftList if leftList != [] else rightList
+    return newList
+
+def divide3(mainList):
+    return len(mainList) / 2
+  
+def mergeSort3(mainList):
+    if len(mainList) <= 1:
+        return mainList
+    leftList = [x for x in mainList[:divide3(mainList)]]
+    rightList = [x for x in mainList[divide3(mainList):]]
+    return merge3(mergeSort3(leftList), mergeSort3(rightList))
+  
+########################################################################
+
 if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
     print(mergeSort1(list))
