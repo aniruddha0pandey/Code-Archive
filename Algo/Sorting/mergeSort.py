@@ -121,4 +121,3 @@ if __name__ == "__main__":
     print(mergeSort2(list))
     print(mergeSort3(list))
     print(mergeSort4(list))
-    
