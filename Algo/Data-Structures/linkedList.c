@@ -30,21 +30,25 @@ assignList() {
 
 }
 
+bool
 pushHead() {
 
 
 }
 
+void*
 popHead() {
 
 
 }
 
+bool
 pushTail() {
 
 
 }
 
+void*
 popTail() {
 
 
