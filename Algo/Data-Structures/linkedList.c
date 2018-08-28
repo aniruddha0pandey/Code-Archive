@@ -25,22 +25,30 @@ create() {
     return ptr;
 }
 
-assign() {
+assignList() {
 
 
 }
 
-push() {
+pushHead() {
 
 
 }
 
-pop() {
+popHead() {
 
 
 }
 
+pushTail() {
 
+
+}
+
+popTail() {
+
+
+}
 
 
 
