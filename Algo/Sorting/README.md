@@ -1,6 +1,6 @@
 Time Complexity
 
-| Techinique   | Average Case   | Average Case   | Average Case   |
+| Techinique   | Worst Case     | Average Case   | Best    Case   |
 | ------------ |:--------------:| -------------- | --------------:|
 | Bubble       | `O(n²)`        |                |                |
 | Selection    | `O(n²)`        |                |                |
