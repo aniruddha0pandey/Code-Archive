@@ -4,15 +4,21 @@
 #include <stdio.h>
 #include <stdbool.h> // C99
 
-struct node {
+typedef struct node {
     int data;
     struct node* next;
  };
 
+typedef struct linkedList {
+    node* head;
+    node* tail;
+};
 
+linkedList* create() {
+    linkedList* ptr;
+    ptr = (linkedList*)malloc(sizeof(linkedList));
 
-
-
+}
 
 
 
