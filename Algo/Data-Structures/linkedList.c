@@ -15,7 +15,7 @@ typedef struct linkedList {
 } linkedList, *ptrLinkedList;
 
 linkedList*
-createNode() {
+getNode() {
     linkedList* ptr;
     ptr = (linkedList*)malloc(sizeof(linkedList));
     if (linkedList != NULL) {
@@ -26,7 +26,7 @@ createNode() {
 }
 
 void
-destroyNode() {
+freeNode() {
 
 
 }
@@ -40,7 +40,7 @@ bool
 pushHead(linkedList* headNode, int data) {
     if (headNode == NULL || data == NULL) return false;
     node* newNode;
-    newNode = createNode();
+    newNode = getNode();
     if (newNode == NULL) return false;
     newNode->data = data;
     newNode->next = headNode->head;
@@ -57,7 +57,7 @@ bool
 pushTail(linkedList* tailNode, int data) {
     if (tailNode == NULL || data == NULL) return false;
     node* newNode;
-    newNode = createNode();
+    newNode = getNode();
     if (newNode == NULL) return false;
     newNode->data = data;
     newNode->next = NULL;
