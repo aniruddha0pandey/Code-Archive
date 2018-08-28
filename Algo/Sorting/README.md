@@ -4,7 +4,7 @@ Time Complexity
 | ------------ |:--------------:| -------------- | --------------:|
 | Bubble       | `O(n²)`        |                |                |
 | Selection    | `O(n²)`        |                |                |
-| Insertion    | `O(n²)`        |                |                |
+| Insertion    | `O(n²)`        | `O(n²)`        | `O(n)`         |
 | Merge        | `O(nlog₂(n))`  |                |                |
 
 Facts
