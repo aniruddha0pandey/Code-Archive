@@ -41,6 +41,7 @@ pushHead(linkedList* newNode, int data) {
     if (newNode == NULL || data == NULL) return false;
     node* avail;
     avail = createNode();
+    if (avail == NULL) return false;
     avail->data = data;
     avail->next = newNode->head;
     newNode->head = avail;
