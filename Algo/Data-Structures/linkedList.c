@@ -54,10 +54,16 @@ popHead() {
 }
 
 bool
-pushTail() {
-    linkedList* avail;
-    avail = createNode();
-
+pushTail(linkedList* tailNode, int data) {
+    if (tailNode == NULL || data == NULL) return false;
+    node* newNode;
+    newNode = createNode();
+    if (newNode == NULL) return false;
+    newNode->data = data;
+    newNode->next = NULL;
+    tailNode->tail = newNode;
+    while (tailNode->tail != NULL)
+        tailNode = tailNode->tail
 }
 
 void*
