@@ -12,7 +12,7 @@ typedef struct node {
 typedef struct linkedList {
     node* head;
     node* tail;
-};
+} *ptr;
 
 linkedList*
 create() {
@@ -32,7 +32,8 @@ assignList() {
 
 bool
 pushHead() {
-
+    linkedList* avail;
+    avail = create();
 
 }
 
@@ -44,7 +45,8 @@ popHead() {
 
 bool
 pushTail() {
-
+    linkedList* avail;
+    avail = create();
 
 }
 
