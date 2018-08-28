@@ -1,8 +1,8 @@
-import random
+import numpy as np
 
 def insertionSort(list):
     
 
 if __name__ == "__main__":
-    list = [random.randint(0, 1000) for _ in range(10)]
+    list = np.random.random_integers(100, size=(100, )).tolist()
     print("Sorted list: ", insertionSort(list))
