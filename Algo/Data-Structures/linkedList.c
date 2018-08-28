@@ -15,7 +15,7 @@ typedef struct linkedList {
 } linkedList, *ptr;
 
 linkedList*
-create() {
+createNode() {
     linkedList* ptr;
     ptr = (linkedList*)malloc(sizeof(linkedList));
     if (linkedList != NULL) {
@@ -26,7 +26,7 @@ create() {
 }
 
 void
-destroy() {
+destroyNode() {
 
 
 }
@@ -39,7 +39,7 @@ assignList() {
 bool
 pushHead() {
     linkedList* avail;
-    avail = create();
+    avail = createNode();
 
 }
 
@@ -52,7 +52,7 @@ popHead() {
 bool
 pushTail() {
     linkedList* avail;
-    avail = create();
+    avail = createNode();
 
 }
 
