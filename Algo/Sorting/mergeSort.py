@@ -8,6 +8,7 @@ Maintenance    :
 Termination    : 
 Paradigm       : Divide and Conquer
 Analysis       : 
+Status         : Untested
 """
 
 ######################################################################## pure-functional
