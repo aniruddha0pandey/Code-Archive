@@ -17,7 +17,12 @@ typedef struct linkedList {
 linkedList* create() {
     linkedList* ptr;
     ptr = (linkedList*)malloc(sizeof(linkedList));
-
+    if (linkedList != NULL) {
+        linkedList-> head = NULL;
+        linkedList-> tail = NULL;
+        
+    }
+    return ptr;
 }
 
 
