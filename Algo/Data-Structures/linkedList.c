@@ -26,6 +26,20 @@ create() {
     return ptr;
 }
 
+assign() {
+
+
+}
+
+push() {
+
+
+}
+
+pop() {
+
+
+}
 
 
 
