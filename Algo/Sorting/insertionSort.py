@@ -8,6 +8,7 @@ Maintenance    : Each iteration maintain the 'loop invariant' -
 Termination    : Observing the subarray a[1 ... j-1] is infact the entire array, we conclude the entire array sorted.
 Paradigm       : Incremental
 Analysis       : 
+Status         : Tested
 """
 
 def insertionSort(list):
