@@ -37,10 +37,13 @@ assignList() {
 }
 
 bool
-pushHead() {
-    linkedList* avail;
+pushHead(linkedList* newNode, int data) {
+    if (newNode == NULL || data == NULL) return false;
+    node* avail;
     avail = createNode();
-
+    avail->data = data;
+    avail->next = newNode->head;
+    newNode->head = avail;
 }
 
 void*
