@@ -12,13 +12,14 @@ Status         : Tested
 """
 
 def insertionSort(list):
-    for index in range(1, len(list)):
-        pos = index - 1
-        while pos >= 0 and list[pos] > list[index]:
-            list[pos + 1] = list[pos]
-            pos = pos - 1
-        list[pos + 1] = list[index]
-    return list
+	for index in range(1, len(list)):
+		key = list[index]
+		pos = index - 1
+		while pos >= 0 and list[pos] > key:
+			list[pos + 1] = list[pos]
+			pos = pos - 1
+			list[pos + 1] = key
+	return list
 
 if __name__ == "__main__":
     list = [int(i) for i in input("Input Elements: ").split()]
