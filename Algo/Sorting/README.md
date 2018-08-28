@@ -1,6 +1,8 @@
-Time Complexity (WorstCase)
-- Insertion Sort `n²`
-- Merge Sort `nlog₂n`  
+Time Complexity
+- Bubble Sort  `O(n²)`
+- Selection Sort  `O(n²)`
+- Insertion Sort `O(n²)`
+- Merge Sort `O(nlog₂(n))`  
 
 Facts
 - The minimum number of comparisons needed to sort any n items using a comparison-sort is :
