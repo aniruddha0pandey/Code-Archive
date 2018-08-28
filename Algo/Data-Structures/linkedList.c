@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <stdbool.h> // C99
 
-struct linkedList {
+struct node {
     int data;
-    struct linkedList* next;
+    struct node* next;
  };
 
 
