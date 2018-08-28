@@ -19,8 +19,8 @@ create() {
     linkedList* ptr;
     ptr = (linkedList*)malloc(sizeof(linkedList));
     if (linkedList != NULL) {
-        linkedList -> head = NULL;
-        linkedList -> tail = NULL;
+        linkedList->head = NULL;
+        linkedList->tail = NULL;
     }
     return ptr;
 }
