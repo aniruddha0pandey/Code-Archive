@@ -13,6 +13,6 @@ Facts
 ```
   <sub>Thus, the number of comparisons necessary for any comparison-sort is lower-bounded by</sub> `Ω(nlog₂n)`.
 - Bubble Sort give `O(n)` for constant highest sorted numbers.
-- Insertion Sort give `O(n)` for constant lowest sorted numbers.
-- Selection Sort give `O(n)` for constant un-sorted numbers.
+- Selection Sort give `O(n)` for constant lowest sorted numbers.
+- Insertion Sort give `O(n)` for constant un-sorted numbers.
 - Insertion Sort is faster then Merge Sort for small input sizes.
