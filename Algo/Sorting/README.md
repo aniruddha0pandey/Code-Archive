@@ -1,11 +1,11 @@
 ### Time Complexity
 
-| Techinique   | Worst Case     | Average Case   | Best Case      |
-| ------------ |:--------------:| -------------- | --------------:|
-| Bubble       | `O(n²)`        |                |                |
-| Selection    | `O(n²)`        |                |                |
-| Insertion    | `O(n²)`        | `θ(n²)`        | `Ω(n)`         |
-| Merge        | `O(nlog₂(n))`  |                |                |
+| Techinique   | Worst Case    | Average Case | Best Case |
+| ------------ |:-------------:| ------------ | ---------:|
+| Bubble       | `O(n²)`       |              |           |
+| Selection    | `O(n²)`       |              |           |
+| Insertion    | `O(n²)`       | `θ(n²)`      | `Ω(n)`    |
+| Merge        | `O(nlog₂(n))` |              |           |
 
 ### Facts
 - The minimum number of comparisons needed to sort any n items using a comparison-sort is :
