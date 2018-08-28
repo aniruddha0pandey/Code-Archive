@@ -1,4 +1,4 @@
-Time Complexity
+Time Complexity (WorstCase)
 - Insertion Sort `n²`
 - Merge Sort `nlog₂n`  
 
@@ -11,4 +11,5 @@ Facts
 ```
   <sub>Thus, the number of comparisons necessary for any comparison-sort is lower-bounded by</sub> `Ω(nlog₂n)`.
 - Bubble Sort give `O(n)` for constant highest sorted number.
+- Insertion Sort give `O(n)` for constant lowest sorted number.
 - Insertion Sort is faster then Merge Sort for small input sizes.
