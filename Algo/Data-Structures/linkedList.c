@@ -37,12 +37,12 @@ assignList() {
 }
 
 bool
-pushHead(linkedList* headNode, int data) {
+pushHead(linkedList* headNode, int newData) {
     if (headNode == NULL || data == NULL) return false;
     node* newNode;
     newNode = getNode();
     if (newNode == NULL) return false;
-    newNode->data = data;
+    newNode->data = newData;
     newNode->next = headNode->head;
     headNode->head = newNode;
 }
@@ -54,12 +54,12 @@ popHead() {
 }
 
 bool
-pushTail(linkedList* tailNode, int data) {
+pushTail(linkedList* tailNode, int newData) {
     if (tailNode == NULL || data == NULL) return false;
     node* newNode;
     newNode = getNode();
     if (newNode == NULL) return false;
-    newNode->data = data;
+    newNode->data = newData;
     newNode->next = NULL;
     tailNode->tail = newNode;
     while (tailNode->tail != NULL)
