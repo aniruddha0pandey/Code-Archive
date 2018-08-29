@@ -66,8 +66,7 @@ pushTail(linkedList* tailNode, int newData) {
         tailNode = newNode;
         return true;
     }
-    while (tail->next != NULL)
-        tail = tail->next;
+    while (tail->next != NULL) tail = tail->next;
     tailNode->next = newNode;
 }
 
