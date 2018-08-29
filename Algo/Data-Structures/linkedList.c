@@ -66,8 +66,13 @@ pushTail(linkedList* tailNode, int newData) {
 
 bool
 pushAfter(linkedList* prevNode, int newData) {
-
-
+    if (prevNode == NULL) return false;
+    node* newNode;
+    newNode = getNode();
+    if (newNode == NULL) return false;
+    newNode->data = newData;
+    newNode->next = prevNode->next;
+    prevNode->next = newNode;
 }
 
 void*
