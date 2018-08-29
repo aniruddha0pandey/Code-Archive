@@ -43,7 +43,7 @@ pushHead(linkedList* headNode, int newData) {
     newNode = getNode();
     if (newNode == NULL) return false;
     newNode->data = newData;
-    newNode->next = headNode->head;
+    newNode->next = head;
     headNode->head = newNode;
 }
 
