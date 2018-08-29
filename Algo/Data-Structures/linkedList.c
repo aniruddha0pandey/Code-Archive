@@ -47,12 +47,6 @@ pushHead(linkedList* headNode, int newData) {
     head = newNode;
 }
 
-void*
-popHead() {
-
-
-}
-
 bool
 pushTail(linkedList* tailNode, int newData) {
     if (tailNode == NULL || data == NULL) return false;
@@ -68,6 +62,18 @@ pushTail(linkedList* tailNode, int newData) {
     }
     while (tail->next != NULL) tail = tail->next;
     tailNode->next = newNode;
+}
+
+bool
+pushAfter(linkedList* prevNode, int newData) {
+
+
+}
+
+void*
+popHead() {
+
+
 }
 
 void*
