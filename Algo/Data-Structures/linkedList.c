@@ -44,7 +44,7 @@ pushHead(linkedList* headNode, int newData) {
     if (newNode == NULL) return false;
     newNode->data = newData;
     newNode->next = head;
-    headNode->head = newNode;
+    head = newNode;
 }
 
 void*
@@ -61,10 +61,14 @@ pushTail(linkedList* tailNode, int newData) {
     if (newNode == NULL) return false;
     newNode->data = newData;
     newNode->next = NULL;
-    tailNode->tail = newNode;
-    while (tailNode->tail != NULL)
-        tailNode = tailNode->tail
-    // 
+    tail = newNode;
+    if (newNode == NULL) {
+        tailNode = newNode;
+        return true;
+    }
+    while (tail->next != NULL)
+        tail = tail->next;
+    tailNode->next = newNode;
 }
 
 void*
