@@ -1,5 +1,5 @@
-#ifndef _LINKEDLIST_C_
-#define _LINKEDLIST_C_
+#ifndef _LINKEDLIST_H_
+#define _LINKEDLIST_H_
 
 #include <stdio.h>
 #include <stdbool.h> // C99
@@ -100,4 +100,4 @@ popTail() {
 
 
 
-#endif // _LINKEDLIST_C_
+#endif // _LINKEDLIST_H_
