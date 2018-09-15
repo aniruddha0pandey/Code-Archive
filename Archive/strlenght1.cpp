@@ -7,7 +7,7 @@ size_t strlenght (const char *str, const char *p) {
   return p - str;
 }
 
-int main(void) {
+int main (void) {
   std::string str[]("hello");
   std::cout << strlenght(str) << std::endl;
   return 0;
