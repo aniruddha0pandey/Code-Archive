@@ -5,5 +5,5 @@
 def tower_of_hanoi(n, src, aux, des):
   if n >= 1:
     tower_of_hanoi(n - 1, src, des, aux)
-    tower_of_hanoi(n    , src, aux, des)
+    print("Moving from", src, "to", des)
     tower_of_hanoi(n - 1, aux, src, des)
