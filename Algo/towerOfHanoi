@@ -1,1 +1,3 @@
-
+# Move (n - 1) disk to Auxiliary peg, using the Destination peg.
+# Move remaining disk to the Destination peg.
+# Move (n - 1) disk from Auxiliary peg to Destination peg using the Source peg.
