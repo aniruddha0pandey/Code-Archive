@@ -7,3 +7,5 @@ def tower_of_hanoi(n, src, aux, des):
     tower_of_hanoi(n - 1, src, des, aux)
     print("Moving from", src, "to", des)
     tower_of_hanoi(n - 1, aux, src, des)
+
+tower_of_hanoi(3, 'A', 'B', 'C')
