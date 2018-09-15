@@ -10,3 +10,5 @@ int main (void) {
   std::cout << strlenght(str) << std::endl;
   return 0;
 }
+
+// ref: /lattera/glibc/blob/master/string/strlen.c
