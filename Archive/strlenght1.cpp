@@ -1,6 +1,7 @@
 #include <iostream>
 
-size_t strlenght (const char *str, const char *p) {
+size_t
+strlenght (const char *str, const char *p) {
   if (str == NULL) return 0;
   p = str;
   while (*p != '\0')  p++;
