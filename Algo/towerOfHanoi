@@ -2,8 +2,8 @@
 # Move remaining disk to the Destination peg.
 # Move (n - 1) disk from Auxiliary peg to Destination peg using the Source peg.
 
-def tower_of_hanoi(n):
+def tower_of_hanoi(n, src, aux, des):
   if n >= 1:
-    tower_of_hanoi(n)
-    tower_of_hanoi(n)
-    tower_of_hanoi(n)
+    tower_of_hanoi(n - 1, src, des, aux)
+    tower_of_hanoi(n    , src, aux, des)
+    tower_of_hanoi(n - 1, aux, src, des)
