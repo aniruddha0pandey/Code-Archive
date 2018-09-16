@@ -12,10 +12,6 @@ public:
   }
   int push();
   bool push();
-  bool empty();
-  bool peek();
-  int size();
-  char print();
 }
 
 void stack::push(auto x) {
@@ -33,20 +29,31 @@ public:
   bool full();
   bool empty();
   auto peek();
+  unsignesd int size();
   char print();
-}
-
-bool status::empty (void) {
-  return (top < 0) ? true : false;
 }
 
 bool status::full (void) {
   return (top >= size - 1) ? true : false;
 }
 
+bool status::empty (void) {
+  return (top < 0) ? true : false;
+}
+
 template <class T>
 T status::peek (void) {
   return stack[top];
+}
+
+auto status::size (void) {
+  
+  
+}
+
+char status::print (void) {
+  
+  
 }
 
 int main (void) {
