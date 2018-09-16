@@ -18,26 +18,34 @@ public:
   char print();
 }
 
-char stack::print() {
-` 
-}
-
 void stack::push(auto x) {
-  if (top >= SIZE) stderr("Overflow");
+  if (full()) stderr("Overflow");
   else stack[++top] = x;  
 }
 
 void stack::pop(void) {
-  if (top < 0) stderr("Underflow");
+  if (empty()) stderr("Underflow");
   else stack[top--];
 }
 
-bool stack::empty (void) {
+class status : public stack {
+public:
+  bool full();
+  bool empty();
+  auto peek();
+  char print();
+}
+
+bool status::empty (void) {
   return (top < 0) ? true : false;
 }
 
+bool status::full (void) {
+  return (top >= size - 1) ? true : false;
+}
+
 template <class T>
-T stack::peek (void) {
+T status::peek (void) {
   return stack[top];
 }
 
