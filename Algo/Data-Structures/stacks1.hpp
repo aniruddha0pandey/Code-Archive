@@ -55,6 +55,7 @@ T status::peek (void) {
 
 auto status::size (void) {
   return sizeof(top * (stack[0]);
+  return stack.length();
 }
 
 char status::print (void) {
