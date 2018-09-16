@@ -11,9 +11,9 @@ protected:
   int* arr;
 public:
   Queue();
+  ~Queue();
   enQueue();
   deQueue();
-  ~Queue();  
 }
 
 Queue::Queue(int siz = 0) {
