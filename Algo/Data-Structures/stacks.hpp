@@ -6,13 +6,16 @@ class stack {
 private:
   int top = -1;
 public:
-  stack():size(x) {
-    int* stack = new int[size];
-    if (stack == nullptr) stderr();
-  }
+  stack();
   int push();
   bool push();
+  ~stack();
 }
+
+stack::stack():size(x) {
+  int* stack = new int[size];
+  if (stack == nullptr) stderr();
+} 
 
 void stack::push(auto x) {
   if (full()) stderr("Overflow");
@@ -23,6 +26,10 @@ void stack::pop(void) {
   if (empty()) stderr("Underflow");
   else stack[top--];
 }
+
+stack::~stack():size(x) {
+  delete[] stack;
+} 
 
 class status : public stack {
 public:
