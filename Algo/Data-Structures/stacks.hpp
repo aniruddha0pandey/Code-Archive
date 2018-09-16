@@ -55,14 +55,3 @@ char status::print (void) {
   
   
 }
-
-int main (void) {
-  stack s(100);
-  for (int i = 0; i < 10; ++i)
-    push(i + 1);
-  s.pop();
-  s.pop();
-  std::cout << s.peek() << std::endl;
-  (s.empty()) ? std::cout << "Empty" : std::cout << "Not Empty";
-  return 0;
-}
