@@ -1,39 +1,53 @@
 // Implemented using stacks
 
 #include <iostream>
-#define SIZE 100
 
-int stack[SIZE];
-int top = -1;
-
-bool push (auto x) {
-  if (top >= SIZE) return false;
-  else {
-    stack[++top] = x;
-    return true;
+class stack {
+private:
+  int top = -1;
+public:
+  stack():size(x) {
+    int* stack = new int[size];
+    if (stack == nullptr) stderr();
   }
+  int push();
+  bool push();
+  bool empty();
+  bool peek();
+  int size();
+  char print();
+}
+
+char stack::print() {
+` 
+}
+
+void stack::push(auto x) {
+  if (top >= SIZE) stderr("Overflow");
+  else stack[++top] = x;  
+}
+
+void stack::pop(void) {
+  if (top < 0) stderr("Underflow");
+  else stack[top--];
+}
+
+bool stack::empty (void) {
+  return (top < 0) ? true : false;
 }
 
 template <class T>
- T pop (void) {
-  if (top < 0) return false;
-  else stack[--top];
-}
-
-template <class T>
-T peek (void) {
+T stack::peek (void) {
   return stack[top];
 }
 
-bool empty (void) {
-  return (top < 0);
-}
-
 int main (void) {
+  stack s(100);
   for (int i = 0; i < 10; ++i)
     push(i + 1);
-  std::cout << pop() << std::endl;
-  std::cout << peek() << std::endl;
-  std::cout << (empty)?"Empty":"Not Empty << std::endl;
+  s.pop();
+  s.pop();
+  std::cout << s.peek() << std::endl;
+  (s.empty()) ? std::cout << "Empty" : std::cout << "Not Empty";
   return 0;
 }
