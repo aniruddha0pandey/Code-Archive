@@ -1,6 +1,6 @@
 // Array implementation of queue
 
-#include <stdio.h>
+#include <iostream>
 
 class Queue {
 private:
