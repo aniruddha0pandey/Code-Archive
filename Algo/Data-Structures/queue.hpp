@@ -16,7 +16,7 @@ public:
   deQueue();
 }
 
-Queue::Queue(int siz = 0) {
+Queue::Queue(auto e = 0): siz(e) {
   front = rear = 0;
   arr = new int[siz];
 }
