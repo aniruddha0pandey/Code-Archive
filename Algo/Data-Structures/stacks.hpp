@@ -29,7 +29,7 @@ public:
   bool full();
   bool empty();
   auto peek();
-  unsignesd int size();
+  unsigned int size();
   char print();
 }
 
