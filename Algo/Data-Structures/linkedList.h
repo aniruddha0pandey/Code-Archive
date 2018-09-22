@@ -7,12 +7,12 @@
 typedef struct node {
     int data;
     struct node* next;
- } node, *ptrNode;
+ } node;
 
 typedef struct linkedList {
     node* head;
     node* tail;
-} linkedList, *ptrLinkedList;
+} linkedList;
 
 linkedList*
 getNode() {
