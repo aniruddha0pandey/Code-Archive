@@ -1,28 +1,33 @@
-#ifndef _LINKEDLIST_H_
-#define _LINKEDLIST_H_
-
 #include <stdio.h>
-#include <stdbool.h> // C99
+#include <stdlib.h>
 
 typedef struct node {
-    int data;
-    struct node* next;
- } node;
+	int data;
+	struct node* next;
+}node;
 
 typedef struct linkedList {
-    node* head;
-    node* tail;
-} linkedList;
+	node* head;
+	node* tail;
+}linkedList;
 
-linkedList*
-getNode() {
-    linkedList* ptr;
-    ptr = (linkedList*)malloc(sizeof(linkedList));
-    if (linkedList != NULL) {
-        linkedList->head = NULL;
-        linkedList->tail = NULL;
-    }
-    return ptr;
+linkedList* 
+listInit() {
+	printf("Intializing List...\n");
+	linkedList* list = (void*) malloc(sizeof(linkedList));
+	list -> head = NULL;
+	list -> tail = NULL;
+	return list;
+}
+
+unsigned int length (linkedList* list) {
+	node* current = list -> head;
+	size_t count = 0;
+	while (current != NULL) {
+		++count;
+		current = current -> next;
+	}
+	return count;
 }
 
 void
@@ -87,17 +92,8 @@ popTail() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif // _LINKEDLIST_H_
+int main (void) {
+	linkedList* myList = listInit();
+	printf("%d", length(myList));
+	return 0;
+}
