@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct node {
 	int data;
@@ -20,7 +21,24 @@ listInit() {
 	return list;
 }
 
-unsigned int length (linkedList* list) {
+node* 
+getNode (int newData) {
+	node* newNode = (void*) malloc(sizeof(node));
+	newNode -> data = newData;
+	return newNode;
+}
+
+bool 
+pushHead (linkedList* list, int newData) {
+	node* newNode = getNode(newData);
+	if (newNode == NULL) return false;
+	newNode -> next = list -> head;
+	list -> head = newNode;
+	return true;
+}
+
+unsigned int 
+length (linkedList* list) {
 	node* current = list -> head;
 	size_t count = 0;
 	while (current != NULL) {
@@ -28,6 +46,18 @@ unsigned int length (linkedList* list) {
 		current = current -> next;
 	}
 	return count;
+}
+
+bool
+printList(linkedList* list) {
+	if (length(list) <= 0)
+		return false;
+	node* current = list -> head;
+	while (current != NULL) {
+		printf("%d ,", current -> data);
+		current = current -> next;
+	}
+	return true;
 }
 
 void
@@ -39,17 +69,6 @@ freeNode() {
 assignList() {
 
 
-}
-
-bool
-pushHead(linkedList* headNode, int newData) {
-    if (headNode == NULL || data == NULL) return false;
-    node* newNode;
-    newNode = getNode();
-    if (newNode == NULL) return false;
-    newNode->data = newData;
-    newNode->next = head;
-    head = newNode;
 }
 
 bool
@@ -93,7 +112,16 @@ popTail() {
 }
 
 int main (void) {
+	int i;
 	linkedList* myList = listInit();
-	printf("%d", length(myList));
+
+	printf("%d\n", length(myList));
+	if (!printList(myList)) printf("Empty List!\n");
+
+	for (i = 0; i < 10;) pushHead(myList, ++i);
+
+	printf("%d\n", length(myList));
+	if (!printList(myList)) printf("EmptyList!\n");
+	
 	return 0;
 }
