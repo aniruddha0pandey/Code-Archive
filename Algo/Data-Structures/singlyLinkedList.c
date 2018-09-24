@@ -39,16 +39,15 @@ length (linkedList* list) {
 	return count;
 }
 
-bool
+void
 printList(linkedList* list) {
 	if (length(list) <= 0)
-		return false;
+		printf("Empty List!\n");
 	node* current = list -> head;
 	while (current != NULL) {
 		printf("%d ", current -> data);
 		current = current -> next;
 	}
-	return true;
 }
 
 bool 
@@ -73,9 +72,11 @@ pushTail (linkedList* list, int newData) {
 }
 
 void
-assignList() {
-
-
+assignList(linkedList* list, int LB, int UB) {
+	int i;
+	for (i = UB; i > LB; )
+		if (!pushHead(list, i--))
+			printf("Memory Overflow!\n");
 }
 
 void*
@@ -92,17 +93,15 @@ popTail() {
 
 int main (void) {
 	int i;
-
 	linkedList* myList = listInit();
 
 	printf("%d\n", length(myList));
-	if (!printList(myList)) printf("Empty List!\n");
+	printList(myList);
 
-	for (i = 0; i < 10;) if (!pushHead(myList, ++i)) printf("Memory Overflow!\n");
+	assignList(myList, 0, 10);
 
-	listLength = length(myList);
 	printf("%d\n", length(myList));
-	if (!printList(myList)) printf("EmptyList!\n");
+	printList(myList);
 
 	return 0;
 }
