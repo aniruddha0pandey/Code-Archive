@@ -28,15 +28,6 @@ getNode (int newData) {
 	return newNode;
 }
 
-bool 
-pushHead (linkedList* list, int newData) {
-	node* newNode = getNode(newData);
-	if (newNode == NULL) return false;
-	newNode -> next = list -> head;
-	list -> head = newNode;
-	return true;
-}
-
 unsigned int 
 length (linkedList* list) {
 	node* current = list -> head;
@@ -54,49 +45,37 @@ printList(linkedList* list) {
 		return false;
 	node* current = list -> head;
 	while (current != NULL) {
-		printf("%d ,", current -> data);
+		printf("%d ", current -> data);
 		current = current -> next;
 	}
 	return true;
 }
 
-void
-freeNode() {
-
-
+bool 
+pushHead (linkedList* list, int newData) {
+	node* newNode = getNode(newData);
+	if (newNode == NULL) return false;
+	newNode -> next = list -> head;
+	list -> head = newNode;
+	///////// Updating Tail-Node /////////
+	if (length(list) == 1)
+		list -> tail = newNode;
+	return true;
 }
 
+bool 
+pushTail (linkedList* list, int newData) {
+	node* newNode = getNode(newData);
+	if (newNode == NULL) return false;
+	newNode -> next = NULL;
+	list -> tail = newNode;
+	return true;
+}
+
+void
 assignList() {
 
 
-}
-
-bool
-pushTail(linkedList* tailNode, int newData) {
-    if (tailNode == NULL || data == NULL) return false;
-    node* newNode;
-    newNode = getNode();
-    if (newNode == NULL) return false;
-    newNode->data = newData;
-    newNode->next = NULL;
-    tail = newNode;
-    if (newNode == NULL) {
-        tailNode = newNode;
-        return true;
-    }
-    while (tail->next != NULL) tail = tail->next;
-    tailNode->next = newNode;
-}
-
-bool
-pushAfter(linkedList* prevNode, int newData) {
-    if (prevNode == NULL) return false;
-    node* newNode;
-    newNode = getNode();
-    if (newNode == NULL) return false;
-    newNode->data = newData;
-    newNode->next = prevNode->next;
-    prevNode->next = newNode;
 }
 
 void*
@@ -113,15 +92,13 @@ popTail() {
 
 int main (void) {
 	int i;
-	unsigned int listLength;
 
 	linkedList* myList = listInit();
 
-	listLength = length(myList);
-	printf("%d\n", listLength);
+	printf("%d\n", length(myList));
 	if (!printList(myList)) printf("Empty List!\n");
 
-	for (i = 0; i < 10;) pushHead(myList, ++i); 
+	for (i = 0; i < 10;) if (!pushHead(myList, ++i)) printf("Memory Overflow!\n");
 
 	listLength = length(myList);
 	printf("%d\n", length(myList));
