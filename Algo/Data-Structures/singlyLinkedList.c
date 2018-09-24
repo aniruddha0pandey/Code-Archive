@@ -40,7 +40,7 @@ length (linkedList* list) {
 }
 
 void
-printList(linkedList* list) {
+printList (linkedList* list) {
 	if (length(list) <= 0) {
 		printf("Empty List!\n");
 		return;
@@ -75,7 +75,7 @@ pushTail (linkedList* list, int newData) {
 }
 
 void
-assignList(linkedList* list, int LB, int UB) {
+assignList (linkedList* list, int LB, int UB) {
 	int i;
 	for (i = UB; i > LB; )
 		if (!pushHead(list, i--))
@@ -83,13 +83,13 @@ assignList(linkedList* list, int LB, int UB) {
 }
 
 void*
-popHead() {
+popHead () {
 
 
 }
 
 void*
-popTail() {
+popTail () {
 
 
 }
@@ -105,8 +105,6 @@ int main (void) {
 
 	printf("%d\n", length(myList));
 	printList(myList);
-
-	
 
 	return 0;
 }
