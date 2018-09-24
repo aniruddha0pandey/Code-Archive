@@ -71,13 +71,15 @@ pushTail (linkedList* list, int newData) {
 	node* newNode = getNode(newData);
 	if (newNode == NULL) return false;
 	newNode -> next = NULL;
-	node* current = list -> head;
-	while (current != NULL) {
-		list -> tail = current;
-		current = current -> next;
+	//////// Determining List Tail ///////
+	node* tmp = list -> head;
+	while (tmp != NULL) {
+		list -> tail = tmp;
+		tmp = tmp -> next;
 	}
-	node* tmp = list -> tail;
-	tmp -> next = newNode;
+	/////////////////////////////////////
+	node* current = list -> tail;
+	current -> next = newNode;
 	list -> tail = newNode;
 	return true;
 }
