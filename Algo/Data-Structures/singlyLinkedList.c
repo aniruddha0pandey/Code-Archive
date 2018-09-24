@@ -113,15 +113,19 @@ popTail() {
 
 int main (void) {
 	int i;
+	unsigned int listLength;
+
 	linkedList* myList = listInit();
 
-	printf("%d\n", length(myList));
+	listLength = length(myList);
+	printf("%d\n", listLength);
 	if (!printList(myList)) printf("Empty List!\n");
 
-	for (i = 0; i < 10;) pushHead(myList, ++i);
+	for (i = 0; i < 10;) pushHead(myList, ++i); 
 
+	listLength = length(myList);
 	printf("%d\n", length(myList));
 	if (!printList(myList)) printf("EmptyList!\n");
-	
+
 	return 0;
 }
