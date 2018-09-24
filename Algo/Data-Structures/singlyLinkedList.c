@@ -59,7 +59,7 @@ pushHead (linkedList* list, int newData) {
 	if (newNode == NULL) return false;
 	newNode -> next = list -> head;
 	list -> head = newNode;
-	///////// Updating Tail-Node /////////
+	//////////// Special-Case ////////////
 	if (length(list) == 1)
 		list -> tail = newNode;
 	return true;
@@ -70,6 +70,13 @@ pushTail (linkedList* list, int newData) {
 	node* newNode = getNode(newData);
 	if (newNode == NULL) return false;
 	newNode -> next = NULL;
+	node* current = list -> head;
+	while (current != NULL) {
+		list -> tail = current;
+		current = current -> next;
+	}
+	node* tmp = list -> tail;
+	tmp -> next = newNode;
 	list -> tail = newNode;
 	return true;
 }
@@ -95,15 +102,15 @@ popTail () {
 }
 
 int main (void) {
-	int i;
 	linkedList* myList = listInit();
 
-	printf("%d\n", length(myList));
+	printf("Size of List: %d\n", length(myList));
 	printList(myList);
 
 	assignList(myList, 0, 10);
+	pushTail(myList, 5);
 
-	printf("%d\n", length(myList));
+	printf("Size of List: %d\n", length(myList));
 	printList(myList);
 
 	return 0;
