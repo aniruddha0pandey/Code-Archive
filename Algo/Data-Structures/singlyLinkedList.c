@@ -101,10 +101,11 @@ popHead (linkedList* list) {
 		printf("ERROR       : Empty List!\n");
 		return;
 	}
-	node* current = list -> head;
-	free(list -> head);
-	list -> head = current -> next;
-	return current;
+	node* tmp = list -> head;
+	node* current = tmp -> next;
+	free(tmp);
+	list -> head = current;
+	return tmp;
 }
 
 void*
