@@ -110,7 +110,14 @@ popTail (linkedList* list) {
 		printf("Description : Empty List!\n");
 		return;
 	}
-
+	node* tmp = list -> head;
+	node* current = tmp;
+	while (current -> next -> next != NULL) {
+		current = current -> next;
+	}
+	free(current -> next);
+	current -> next = NULL;
+	list -> tail = current;
 }
 
 void
