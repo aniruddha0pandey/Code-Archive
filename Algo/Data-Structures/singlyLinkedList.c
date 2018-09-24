@@ -95,6 +95,18 @@ assignList (linkedList* list, int LB, int UB) {
 				printf("ERROR       : Memory Overflow!\n");
 }
 
+
+void
+retractList (linkedList* list, int t_head, int t_tail) {
+	int i;
+	for (i = 0; i < t_head; i++)
+		printf("Freed Node  : 0x%p\n", popHead(myList));
+	printf("----------------------\n");
+	for (i = 0; i < t_tail; i++)
+		printf("Freed Node  : 0x%p\n", popTail(myList));
+}
+
+
 void*
 popHead (linkedList* list) {
 	if (length(list) <= 0) {
@@ -110,7 +122,17 @@ popHead (linkedList* list) {
 
 void*
 popTail () {
-
+	if (length(list) <= 0) {
+		printf("ERROR       : Empty List!\n");
+		return;
+	} if (length(list) == 1) {
+		node* tmp = list -> head;
+		free(tmp);
+		list -> head = NULL;
+		list -> tail = NULL;
+		printf("Description : Empty List!\n");
+		return;
+	}
 
 }
 
@@ -125,7 +147,9 @@ int main (void) {
 	printf("Size of List: %d\n", length(myList));
 	printList(myList);
 
-	printf("Freed Node  : 0x%p\n", popHead(myList));
+	retractList(myList, 2, 3);
+
+	printf("Size of List: %d\n", length(myList));
 	printList(myList);
 
 	return 0;
