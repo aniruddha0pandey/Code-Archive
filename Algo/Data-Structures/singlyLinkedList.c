@@ -42,10 +42,11 @@ length (linkedList* list) {
 void
 printList (linkedList* list) {
 	if (length(list) <= 0) {
-		printf("Empty List!\n");
+		printf("Description : Empty List!\n");
 		return;
 	}
 	node* current = list -> head;
+	printf("Description : ");
 	while (current != NULL) {
 		printf("%d ", current -> data);
 		current = current -> next;
