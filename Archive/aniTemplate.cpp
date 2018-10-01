@@ -29,9 +29,12 @@ scan (int& n = 0) {
 }
 
 int main (void) {
+  ofstream fout(getenv("OUTPUT_PATH"));
   boost();
   int n;
   scan(n);
   srand((unsigned)time(NULL)); // Seed the random-number generator with current time so that the numbers will be different every time we run <rand()>.
+  fout << result << "\n";
+  fout.close();
   return 0;
 }
