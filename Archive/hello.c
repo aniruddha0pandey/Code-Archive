@@ -1,4 +1,4 @@
 #include<stdio.h>
 main(){
-#define _ i################f
+#define /*Hello, World!*/_ i################f
 {_(printf("Hello, World!")){}}}
