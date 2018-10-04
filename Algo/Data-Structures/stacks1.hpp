@@ -7,9 +7,9 @@ private:
   int top = -1;
 public:
   stack();
+  ~stack();
   int push();
   bool push();
-  ~stack();
 }
 
 stack::stack():siz(x) {
