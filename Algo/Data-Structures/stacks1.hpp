@@ -1,4 +1,4 @@
-// Implemented using stacks
+// Implemented using arrays
 
 #include <iostream>
 
