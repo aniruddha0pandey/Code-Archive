@@ -4,16 +4,14 @@
 
 #include <iostream>
 
-bool childLarger(int arr[], int n, int i, int child) { return (child < n) && (arr[child] > arr[i]); }
-
 // bottom-up approach
 void heapify (int arr[], int n, int i) {
 	int heap = i;
 	int l = (i << 1) + 1;
 	int r = (i << 1) + 2;
 
-	if ( childLarger(arr, n, i, l) ) heap = l;
-	if ( childLarger(arr, n, i, r) ) heap = r;
+	if ( (l < n) && (arr[l] > arr[heap]) ) heap = l;
+	if ( (r < n) && (arr[r] > arr[heap]) ) heap = r;
 	if (heap != i) {
 		std::swap(arr[i], arr[heap]);
 		heapify(arr, n, heap);
