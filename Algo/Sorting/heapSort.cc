@@ -8,7 +8,7 @@ bool childLarger(int arr[], int n, int i, int child) { return (child < n) && (ar
 
 // bottom-up approach
 void heapify (int arr[], int n, int i) {
-	int heap;
+	int heap = i;
 	int l = (i << 1) + 1;
 	int r = (i << 1) + 2;
 
@@ -28,7 +28,7 @@ void buildHeap (int arr[], int n) {
 void extractHeap(int arr[], int n) {
 	for (int i = n - 1; i >= 0; --i) {
 		std::swap(arr[0], arr[i]);
-		heapify(arr, n, i);
+		heapify(arr, i, 0);
 	}
 }
 
@@ -39,12 +39,12 @@ void heapSort (int arr[], int n) {
 
 char print(int arr[], int n) {
 	for (int i = 0; i < n; ++i)
-		std::cout << arr[i] << std::endl;
+		std::cout << arr[i] << " ";
 	return puts("");
 }
 
 int main (void) {
-	int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+	int arr[] = {12, 11, 13, 5, 6, 7};
 	int n = *(&arr + 1) - arr;
 	heapSort(arr, n);
 	print(arr, n);
