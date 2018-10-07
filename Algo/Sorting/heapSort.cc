@@ -42,7 +42,7 @@ char print(int arr[], int n) {
 }
 
 int main (void) {
-	int arr[] = {12, 11, 13, 5, 6, 7};
+	int arr[] = {10, 9, 8, 7, 6, 5};
 	int n = *(&arr + 1) - arr;
 	heapSort(arr, n);
 	print(arr, n);
