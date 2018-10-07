@@ -5,21 +5,24 @@
 #include <iostream>
 
 // bottom-up approach
+// max-heap in ascending order
 void heapify (int arr[], int n, int i) {
-	int root = i;
+	int max = i;
 	int l = (i << 1) + 1;
 	int r = (i << 1) + 2;
-	if ( (l < n) && (arr[l] > arr[root]) ) root = l;
-	if ( (r < n) && (arr[r] > arr[root]) ) root = r;
-	if (root != i) {
-		std::swap(arr[i], arr[root]);
-		heapify(arr, n, root);
+	if ( (l < n) && (arr[l] > arr[max]) ) max = l;
+	if ( (r < n) && (arr[r] > arr[max]) ) max = r;
+	if (max != i) {
+		std::swap(arr[i], arr[max]);
+		heapify(arr, n, max);
 	}
 }
 
 void buildHeap (int arr[], int n) {
-	for (int i = (n >> 1) - 1; i >= 0; --i)
-		heapify(arr, n, i);
+	for (int i = n / 2 - 1; i >= 0; i--)
+		//heapify(arr, n, i);
+		std::cout << i << " ";
+	puts("");
 }
 
 void extractHeap(int arr[], int n) {
@@ -31,7 +34,7 @@ void extractHeap(int arr[], int n) {
 
 void heapSort (int arr[], int n) {
 	buildHeap(arr, n);
-	extractHeap(arr, n);
+	//extractHeap(arr, n);
 }
 
 char print(int arr[], int n) {
@@ -47,4 +50,5 @@ int main (void) {
 	print(arr, n);
 	return 0;
 }
+
 
