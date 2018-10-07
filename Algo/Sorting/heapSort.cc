@@ -9,7 +9,6 @@ void heapify (int arr[], int n, int i) {
 	int heap = i;
 	int l = (i << 1) + 1;
 	int r = (i << 1) + 2;
-
 	if ( (l < n) && (arr[l] > arr[heap]) ) heap = l;
 	if ( (r < n) && (arr[r] > arr[heap]) ) heap = r;
 	if (heap != i) {
