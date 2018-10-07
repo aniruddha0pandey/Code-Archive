@@ -6,14 +6,14 @@
 
 // bottom-up approach
 void heapify (int arr[], int n, int i) {
-	int heap = i;
+	int root = i;
 	int l = (i << 1) + 1;
 	int r = (i << 1) + 2;
-	if ( (l < n) && (arr[l] > arr[heap]) ) heap = l;
-	if ( (r < n) && (arr[r] > arr[heap]) ) heap = r;
-	if (heap != i) {
-		std::swap(arr[i], arr[heap]);
-		heapify(arr, n, heap);
+	if ( (l < n) && (arr[l] > arr[root]) ) root = l;
+	if ( (r < n) && (arr[r] > arr[root]) ) root = r;
+	if (root != i) {
+		std::swap(arr[i], arr[root]);
+		heapify(arr, n, root);
 	}
 }
 
@@ -47,3 +47,4 @@ int main (void) {
 	print(arr, n);
 	return 0;
 }
+
