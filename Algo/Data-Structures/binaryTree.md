@@ -1,1 +1,1 @@
-- Maximum Nodes at level (i) = `2<sup>i - 1</sup>'
+- Maximum Nodes at level (i) = <code>2<sup>i - 1</sup></code>
