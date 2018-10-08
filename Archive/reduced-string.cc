@@ -7,7 +7,7 @@ main (void) {
 	std::cin >> s;
 	for (int i = 1, j = 0, tmp = s[0]; i <= s.length(); ++i) {
 		if (!(tmp ^ s[i])) ++i;
-		else  newString.insert(j++, 1, s[i - 1]);
+		else newString.insert(j++, 1, s[i - 1]);
 		tmp = s[i];
 	}
 	if (newString.size()) std::cout << newString;
