@@ -23,7 +23,7 @@ void buildHeap (int arr[], int n) {
 		heapify(arr, n, i);
 }
 
-void extractHeap(int arr[], int n) {
+void extractHeap (int arr[], int n) {
 	for (int i = n - 1; i >= 0; --i) {
 		std::swap(arr[0], arr[i]);
 		heapify(arr, i, 0);
@@ -35,7 +35,7 @@ void heapSort (int arr[], int n) {
 	extractHeap(arr, n);
 }
 
-char print(int arr[], int n) {
+char print (int arr[], int n) {
 	for (int i = 0; i < n; ++i)
 		std::cout << arr[i] << " ";
 	return puts("");
