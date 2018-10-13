@@ -38,20 +38,20 @@ T Queue::deQueue(void) {
 
 class Status: public Queue {
 public:
-	full(int, auto);
-	empty(int, int);
-	size(int, int);
+	full();
+	empty();
+	size();
 };
 
-bool Status::full(int frontIndex, int rearIndex) {
+bool Status::full() {
+	return (siz == rearIndex);
+}
+
+bool Status::empty() {
 	return (frontIndex == rearIndex);
 }
 
-bool Status::empty(int frontIndex, int rearIndex) {
-	return (frontIndex == rearIndex);
-}
-
-int Status::size(int frontIndex, int rearIndex) {
+int Status::size() {
 	return (rearIndex - frontIndex);
 }
 
