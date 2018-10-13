@@ -14,9 +14,9 @@ public:
   ~Queue();
   enQueue();
   deQueue();
-}
+};
 
-Queue::Queue(auto e = 0): siz(e) {
+void Queue::Queue(auto e = 0): siz(e) {
   front = rear = 0;
   arr = new int[siz];
 }
@@ -36,8 +36,16 @@ T Queue::deQueue(void) {
   else return arr[front++];
 }
 
-class status: public Queue {
-private:
+class Status: public Queue {
+public:
   empty();
   size();
+};
+
+int Status::empty(int front, int rear) {
+	return (rear - front);
+}
+
+int Status::size() {
+	return;
 }
