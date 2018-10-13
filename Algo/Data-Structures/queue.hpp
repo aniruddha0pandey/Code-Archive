@@ -4,48 +4,58 @@
 
 class Queue {
 private:
-  int siz;
+	int siz;
 protected:
-  int front, rear;
-  static int count;
-  int* arr;
+	int frontIndex, rearIndex;
+	static int count;
+	int* arr;
 public:
-  Queue();
-  ~Queue();
-  enQueue();
-  deQueue();
+	Queue(auto);
+	~Queue();
+	enQueue(auto);
+	deQueue();
 };
 
-void Queue::Queue(auto e = 0): siz(e) {
-  front = rear = 0;
-  arr = new int[siz];
+Queue::Queue(auto e = 0): siz(e) {
+	frontIndex = rearIndex = 0;
+	arr = new int[siz];
 }
 
 virtual Queue::~Queue() {
-  delete arr;
+	delete arr;
 }
 
 void Queue::enQueue(auto x) {
-  if (full()) stderr("Overflow");
-  else arr[rear++] = x;
+	if ( full() ) std::cerr << "Overflow";
+	else arr[rearIndex++] = x;
 }
 
 template <class T>
 T Queue::deQueue(void) {
-  if (empty()) stderr("Underflow");
-  else return arr[front++];
+	if ( empty() ) std::cerr << "Underflow";
+	else return arr[frontIndex++];
 }
 
 class Status: public Queue {
 public:
-  empty();
-  size();
+	full(int, auto);
+	empty(int, int);
+	size(int, int);
 };
 
-int Status::empty(int front, int rear) {
-	return (rear - front);
+bool Status::full(int frontIndex, int rearIndex) {
+	return (frontIndex == rearIndex);
 }
 
-int Status::size() {
-	return;
+bool Status::empty(int frontIndex, int rearIndex) {
+	return (frontIndex == rearIndex);
+}
+
+int Status::size(int frontIndex, int rearIndex) {
+	return (rearIndex - frontIndex);
+}
+
+int main (void) {
+	Queue q(5);
+	return 0;
 }
