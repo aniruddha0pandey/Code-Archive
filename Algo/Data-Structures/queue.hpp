@@ -1,6 +1,7 @@
 // Array implementation of queue
 
 #include <iostream>
+#include <stdlib.h>
 
 class Queue {
 private:
@@ -12,50 +13,43 @@ protected:
 public:
 	Queue(auto);
 	~Queue();
-	enQueue(auto);
-	deQueue();
+	void enQueue(int);
+	int deQueue();
+	bool full();
+	bool empty();
+	int size();
 };
 
-Queue::Queue(auto e = 0): siz(e) {
+Queue::Queue(int e = 0): siz(e) {
 	frontIndex = rearIndex = 0;
 	arr = new int[siz];
 }
 
-virtual Queue::~Queue() {
-	delete arr;
+Queue::~Queue() {
+	delete[] arr;
 }
 
-void Queue::enQueue(auto x) {
-	if ( full() ) std::cerr << "Overflow";
+void Queue::enQueue(int x) {
+	if ( full() ){
+		std::cerr << "Overflow";
+		exit(EXIT_FAILURE);
+	}
 	else arr[rearIndex++] = x;
 }
 
-template <class T>
-T Queue::deQueue(void) {
-	if ( empty() ) std::cerr << "Underflow";
+int Queue::deQueue() {
+	if ( empty() ) std::cerr << "Underflow (";
 	else return arr[frontIndex++];
 }
 
-class Status: public Queue {
-public:
-	full();
-	empty();
-	size();
-};
-
-bool Status::full() {
+bool Queue::full() {
 	return (siz == rearIndex);
 }
 
-bool Status::empty() {
+bool Queue::empty() {
 	return (frontIndex == rearIndex);
 }
 
-int Status::size() {
+int Queue::size() {
 	return (rearIndex - frontIndex);
-}
-
-int main (void) {
-	Queue q(5);
-	return 0;
 }
