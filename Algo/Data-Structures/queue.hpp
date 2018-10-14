@@ -33,8 +33,7 @@ void Queue::enQueue(int x) {
 	if ( full() ){
 		std::cerr << "Overflow";
 		exit(EXIT_FAILURE);
-	}
-	else arr[rearIndex++] = x;
+	} else arr[rearIndex++] = x;
 }
 
 int Queue::deQueue() {
