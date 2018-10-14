@@ -26,6 +26,11 @@ insertNode (node* tmp, int newData) {
 }
 
 node*
+deleteNode (node* tmp, int newData) {
+	if (tmp == NULL) return tmp;
+}
+
+node*
 searchNode (node* tmp, int newData) {
 	if (tmp == NULL || tmp -> data == newData) return tmp;
 	if (tmp -> data < newData) return searchNode(tmp -> right, newData);
