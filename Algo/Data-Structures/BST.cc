@@ -26,8 +26,8 @@ insertNode (node* tmp, int newData) {
 }
 
 node*
-deleteNode (node* tmp, int newData) {
-	if (tmp == NULL || tmp -> data == newData) return tmp;
+deleteNode (node* tmp, int oldData) {
+	if (tmp == NULL || tmp -> data == oldData) return tmp;
 }
 
 node*
