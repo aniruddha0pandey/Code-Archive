@@ -18,7 +18,7 @@ getNode (int newData) {
 node*
 insertNode (node* tmp, int newData) {
 	if (tmp == NULL) return getNode(newData);
-	else if (tmp -> data > newData)
+	if (tmp -> data > newData)
 		tmp -> left = insertNode(tmp -> left, newData);
 	else
 		tmp -> right = insertNode(tmp -> right, newData);
