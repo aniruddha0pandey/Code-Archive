@@ -28,6 +28,10 @@ insertNode (node* tmp, int newData) {
 node*
 deleteNode (node* tmp, int oldData) {
 	if (tmp == NULL || tmp -> data == oldData) return tmp;
+	if (tmp -> data > oldData)
+		tmp -> left = deleteNode(tmp -> left, oldData);
+	else
+		tmp -> right = deleteNode(tmp -> right, oldData);
 }
 
 node*
