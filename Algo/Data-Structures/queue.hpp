@@ -20,35 +20,35 @@ public:
 	int size();
 };
 
-Queue::Queue(int e = 0): siz(e) {
+Queue::Queue (int e = 0): siz(e) {
 	frontIndex = rearIndex = 0;
 	arr = new int[siz];
 }
 
-Queue::~Queue() {
+Queue::~Queue () {
 	delete[] arr;
 }
 
-void Queue::enQueue(int x) {
-	if ( full() ){
+void Queue::enQueue (int x) {
+	if ( full() ) {
 		std::cerr << "Overflow";
 		exit(EXIT_FAILURE);
 	} else arr[rearIndex++] = x;
 }
 
-int Queue::deQueue() {
+int Queue::deQueue () {
 	if ( empty() ) std::cerr << "Underflow (";
 	else return arr[frontIndex++];
 }
 
-bool Queue::full() {
+bool Queue::full () {
 	return (siz == rearIndex);
 }
 
-bool Queue::empty() {
+bool Queue::empty () {
 	return (frontIndex == rearIndex);
 }
 
-int Queue::size() {
+int Queue::size () {
 	return (rearIndex - frontIndex);
 }
