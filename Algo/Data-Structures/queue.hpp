@@ -8,7 +8,6 @@ private:
 	int siz;
 protected:
 	int frontIndex, rearIndex;
-	static int count;
 	int* arr;
 public:
 	Queue(auto);
