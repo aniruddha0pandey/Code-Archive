@@ -1,4 +1,3 @@
-// in-order BST search in ascending order.
 #include <iostream>
 
 typedef struct
