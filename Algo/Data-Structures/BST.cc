@@ -35,7 +35,7 @@ searchNode (node* tmp, int newData) {
 void
 preOrder (node* tmp) {
 	if (tmp == NULL) return;
-	std::cout << tmp -> data << "\n";
+	std::cout << tmp -> data << " ";
 	preOrder(tmp -> left);
 	preOrder(tmp -> right);
 }
