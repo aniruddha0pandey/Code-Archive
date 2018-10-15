@@ -32,6 +32,7 @@ deleteNode (node* tmp, int oldData) {
 		tmp -> left = deleteNode(tmp -> left, oldData);
 	else
 		tmp -> right = deleteNode(tmp -> right, oldData);
+	// http://www.techiedelight.com/deletion-from-bst/
 }
 
 node*
