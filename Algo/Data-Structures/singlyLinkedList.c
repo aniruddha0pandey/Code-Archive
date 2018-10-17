@@ -39,6 +39,12 @@ length (linkedList* list) {
 	return count;
 }
 
+// unsigned int
+// lenght (node* head, size_t count = 0) {
+// 	if (head == NULL) return count;
+// 	lenght (head -> next, count + 1);
+// }
+
 void
 printList (linkedList* list) {
 	if (length(list) <= 0) {
