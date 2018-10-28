@@ -3,7 +3,9 @@
 - Minimum Height with (n) Nodes = <code>log₂(n + 1) - 1</code>
 - Minimum Levels with (l) Leaves = <code>log₂(l)</code>
   
+  
 - breadth-first traversal
+  - LevelOrder traversla - (left, right)
 - depth-first traversal
   - PreOrder traversal  - (parent, left, right)
   - InOrder traversal   - (left, parent, right)
