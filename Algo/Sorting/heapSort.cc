@@ -30,10 +30,22 @@ void extractHeap (int arr[], int n) {
 	}
 }
 
-void heapSort (int arr[], int n) {
+void heapSort1 (int arr[], int n) {
 	buildHeap(arr, n);
 	extractHeap(arr, n);
 }
+
+// void insertHeap () {
+	
+// }
+
+// void deleteHeap () {
+	
+// }
+
+// void heapSort2 () {
+	
+// }
 
 char print (int arr[], int n) {
 	for (int i = 0; i < n; ++i)
@@ -44,7 +56,7 @@ char print (int arr[], int n) {
 int main (void) {
 	int arr[] = {10, 9, 8, 7, 6, 5};
 	int n = *(&arr + 1) - arr;
-	heapSort(arr, n);
+	heapSort1(arr, n);
 	print(arr, n);
 	return 0;
 }
