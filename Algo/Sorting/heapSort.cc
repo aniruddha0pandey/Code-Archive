@@ -35,15 +35,15 @@ void heapSort1 (int arr[], int n) {
 	extractHeap(arr, n);
 }
 
-// void insertHeap () {
+// void insertHeap (int arr[], int n) {
 	
 // }
 
-// void deleteHeap () {
+// void deleteHeap (int arr[], int n) {
 	
 // }
 
-// void heapSort2 () {
+// void heapSort2 (int arr[], int n) {
 	
 // }
 
@@ -57,6 +57,7 @@ int main (void) {
 	int arr[] = {10, 9, 8, 7, 6, 5};
 	int n = *(&arr + 1) - arr;
 	heapSort1(arr, n);
+// 	heapSort2(arr, n);
 	print(arr, n);
 	return 0;
 }
