@@ -12,7 +12,7 @@
 ---
 - **Edge** – Connection between one node to another.
 - **Path** – A sequence of nodes and edges connecting a node with a descendant.
-  - The direction of a path is strictly from top (root) to bottom (leaf).
+  - The direction of a path is strictly from top to bottom.
 - **Level** – The number of connections between the node and the root.
 - **Height** – The number of edges on the longest downward path between that node and a leaf.
 - **Depth** – The number of edges from the node to the tree's root node.
