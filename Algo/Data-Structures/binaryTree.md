@@ -1,6 +1,6 @@
 - Maximum Nodes at Level (i) = <code>2<sup>i</sup></code>
 - Maximum Nodes with Tree Height (h) = <code>2<sup>h</sup> - 1</code>
-- Minimum Height with (n) Nodes = <code>log₂(n + 1) - 1</code> or <code>log₂(n + 1)</code>
+- Minimum Height with (n) Nodes = <code>log₂(n + 1) - 1</code> or <code>ceil(log₂(n + 1))</code>
 - Minimum Levels with (n) Leaves = <code>log₂(n)</code> or <code>ceil(log₂(n)) + 1</code>
 ---
 - breadth-first traversal
