@@ -21,5 +21,6 @@
 - `height.root = 1`
 - `depth.root = 0`
 ---
-- **Full BT or Proper BT or 2-Tree** – A tree in which every node other than the leaves has two children.
+- **Full BT or Proper BT** – A tree in which every node other than the leaves has two children.
 - **Complete BT** – A tree in which every level, except possibly the last, is completely filled and the last (or second last if not consedering leaf nodes to be in a level) level has all its nodes to the left side.
+- **Extended BT or 2-Tree** – A tree with special nodes replacing every null subtree converting to **Complete BT**. Every regular node has two children, and every special node has no children.
