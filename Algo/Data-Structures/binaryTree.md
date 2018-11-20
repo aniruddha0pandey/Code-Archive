@@ -20,3 +20,6 @@
 - Leaf is not a Node, and acts only like a stop sign or Leaf is a Node, and other are Inner Nodes except Root.
 - `height.root = 1`
 - `depth.root = 0`
+---
+- **Full BT or Proper BT or 2-Tree** – A tree in which every node other than the leaves has two children.
+- **Complete BT** – A tree in which every level, except possibly the last, is completely filled and the last (or second last if not consedering leaf nodes to be in a level) level has all its nodes to the left side.
