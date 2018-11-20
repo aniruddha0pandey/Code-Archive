@@ -14,7 +14,7 @@
 - **Path** – A sequence of nodes and edges connecting a node with a descendant.
   - The direction of a path is strictly from top to bottom.
 - **Level** – The number of connections between the node and the root.
-- **Height** – The number of edges on the longest downward path between that node and a leaf.
+- **Height** – The number of edges on the longest downward path between selected nodes.
 - **Depth** – The number of edges from the node to the tree's root node.
 ---
 - Leaf is not a Node, and acts only like a stop sign or Leaf is a Node, and other are Inner Nodes except Root.
