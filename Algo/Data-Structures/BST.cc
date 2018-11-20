@@ -18,20 +18,22 @@ getNode (int newData) {
 node*
 insertNode (node* tmp, int newData) {
 	if (tmp == NULL) return getNode(newData);
-	if (tmp -> data > newData)
+	if (tmp -> data > newData) {
 		tmp -> left = insertNode(tmp -> left, newData);
-	else
+	} else {
 		tmp -> right = insertNode(tmp -> right, newData);
+	}
 	return tmp;
 }
 
 node*
 deleteNode (node* tmp, int oldData) {
 	if (tmp == NULL || tmp -> data == oldData) return tmp;
-	if (tmp -> data > oldData)
+	if (tmp -> data > oldData) {
 		tmp -> left = deleteNode(tmp -> left, oldData);
-	else
+	} else {
 		tmp -> right = deleteNode(tmp -> right, oldData);
+	}
 	// http://www.techiedelight.com/deletion-from-bst/
 }
 
