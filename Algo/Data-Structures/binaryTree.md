@@ -18,5 +18,5 @@
 - **Depth** – The number of edges from the node to the tree's root node.
 ---
 - Leaf is not a Node, and acts only like a stop sign or Leaf is a Node, and other are Inner Nodes except Root.
-- The height of the root is 1.
-- The depth of the root is 0.
+- `height.root = 1`
+- `depth.root = 0`
