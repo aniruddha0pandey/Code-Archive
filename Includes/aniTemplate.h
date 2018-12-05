@@ -43,7 +43,7 @@ int main (void) {
   boost();
   int n;
   scan(n);
-  srand((unsigned)time(NULL)); // Seed the random-number generator with current time so that the numbers will be different every time we run <rand()>.
+  srand((unsigned)time(NULL));
   fout << result << "\n";
   fout.close();
   return 0;
