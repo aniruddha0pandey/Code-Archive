@@ -31,7 +31,8 @@ inline void boost (void) {
 
 void
 scan (int& n = 0) {
-    register int c = getchar_unlocked(); // For Win32 use <_getchar_nolock();> and <_putchar_nolock(c);>
+    register int c = getchar_unlocked();
+ /* register wint_t c = _getchar_nolock(); */// Win32
     for (; c < '0' || c > '9'; c = getchar_unlocked());
     for (; c > '/' && c < ':'; c = getchar_unlocked())
         n = (n << 1) + (n << 3) + (c - '0');
