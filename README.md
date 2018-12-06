@@ -7,4 +7,4 @@ This program is distributed in the hope that it will be useful, but **WITHOUT AN
 
 This documentation undoubtedly has bugs; if you find some, please file them [here](https://github.com/aniruddha0pandey/Code_Archive/pulls).
 
-<p align='right'><img alt="Creative Commons License" src="res/copyright.png" /></p>
+<p align='right'><img alt="Creative Commons License" src="res/copyright.png" /> <code>Aniruddha Pandey</code></p>
