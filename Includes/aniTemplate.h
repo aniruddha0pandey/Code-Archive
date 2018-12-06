@@ -42,7 +42,7 @@ scan (int& n = 0) {
 int main (void) {
   ofstream fout(getenv("OUTPUT_PATH"));
   boost();
-  int n;
+  int n, result;
   scan(n);
   srand((unsigned)time(NULL));
   fout << result << "\n";
