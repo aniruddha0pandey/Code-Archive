@@ -1,5 +1,5 @@
 # Code Archive
-This archive includes my favorite codes.
+This archive includes my favorite weekend challenges. While writing each program, I tried to balance the trade off between good, fast and cheap implementation of code.
   
 Except as otherwise noted, the content of this page is licensed under the [Creative Commons Attribution 4.0 License](http://creativecommons.org/licenses/by/4.0/), and code samples are licensed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).  
 
