@@ -24,7 +24,8 @@ gcd (T x, T y) {
   return gcd(y, x%y);
 }
 
-inline void boost (void) {
+inline void
+boost (void) {
   std::ios::sync_with_stdio(false);
   std::cin.tie(NULL);
 }
@@ -39,11 +40,17 @@ scan (int& n = 0) {
     if (c == '-') n = ~(n - 1);
 }
 
-int main (void) {
-  ofstream fout(getenv("OUTPUT_PATH"));
+int
+main ( void ) {
+  ofstream fout( getenv("OUTPUT_PATH") );
   boost();
-  int n, result;
-  scan(n);
+  int input, result;
+  scan( input );
+
+  int arr[] = {};
+  int n = sizeof( arr ) / sizeof( arr[0] );
+  vector<int> vect(arr, arr + n);
+
   srand((unsigned)time(NULL));
   fout << result << "\n";
   fout.close();
