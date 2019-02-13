@@ -7,7 +7,7 @@
 
 #define loop(type, i, a, b) for(type i = (type)a; i < (type)b; ++i)
 
-const int MOD = 1e9 + 7;
+const int MOD = 1e9 + 7; // 1'000'000'007
 
 const double low = -1e10;
 const double high = 1e10;
