@@ -5,7 +5,7 @@
 
 #define sz(x) (ll)(x).size()
 
-#define loop(i, a, b) for(int i = (int)a; i < (int)b; ++i)
+#define loop(type, i, a, b) for(type i = (type)a; i < (type)b; ++i)
 
 const int MOD = 1e9 + 7;
 
