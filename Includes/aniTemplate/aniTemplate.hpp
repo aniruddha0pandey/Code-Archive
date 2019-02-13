@@ -4,6 +4,8 @@
 #define ull unsigned long long
 
 #define sz(x) (ll)(x).size()
+#define max(x,y) (x>y)?x:y
+#define min(x,y) (x<y)?x:y
 
 #define loop(type, i, a, b) for(type i = (type)a; i < (type)b; ++i)
 
