@@ -5,6 +5,8 @@
 
 #define sz(x) (ll)(x).size()
 
+#define loop(i, a, b) for(int i = (int)a; i < (int)b; ++i)
+
 const int MOD = 1e9 + 7;
 
 const double low = -1e10;
