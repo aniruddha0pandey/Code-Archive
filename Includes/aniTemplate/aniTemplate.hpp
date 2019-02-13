@@ -6,6 +6,7 @@
 #define sz(x) (ll)(x).size()
 #define max(x,y) (x>y)?x:y
 #define min(x,y) (x<y)?x:y
+#define mid(s,e) (s+(e-s)/2)
 
 #define loop(type, i, a, b) for(type i = (type)a; i < (type)b; ++i)
 
