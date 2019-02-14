@@ -8,7 +8,6 @@
 #define min(x,y) (x<y)?x:y
 #define mid(s,e) (s+(e-s)/2)
 
-#define loop(type, i, a, b) for(type i = (type)a; i < (type)b; ++i)
 
 const int MOD = 1e9 + 7; // 1'000'000'007
 
