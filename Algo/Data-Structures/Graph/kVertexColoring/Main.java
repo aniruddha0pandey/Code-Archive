@@ -44,9 +44,9 @@ public class Main {
 			 * avoid multiple object creation that drastically increases 
 			 * execution time and memory usage
 			 */
-			Solver solver = new Solver();
-			for (int i = 0; i < cases; i++) {				
-				solver.solve(br.readLine());
+			Solver logic = new Solver();
+			for (int i = 0; i < cases; i++) {
+				logic.solve(br.readLine());
 			}
 
 		} catch (IOException e) {
@@ -54,7 +54,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		// Print the final output
-		System.out.println(output);
+		System.out.println( output );
 	}
 
 }
@@ -76,14 +76,14 @@ public class Main {
  * 
  */
 class Solver {
-
 	/*
 	 * Logic goes here ...
 	 * Add to the global variables after processing the input
 	 * Maybe reverse a string or parse to an integer or , etc.
 	 */	
-	public void solve(String input) {					
-		Main.output.concat(input);	
+	public void solve(String input) {
+		Main.output.concat(input);
 	}
 
 }
+
