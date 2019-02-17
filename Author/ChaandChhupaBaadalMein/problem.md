@@ -28,21 +28,20 @@ ___
 - **TRUE**, if solution is feasible. Otherwise **FALSE**.
 ___
 ## Constraints
-- 1≤T≤30
-- 1≤V≤50
-- 1≤C≤V
-- 1≤E≤V∗(V−1)
+- 1 ≤ **T** ≤30
+- 1 ≤ **V** ≤50
+- 1 ≤ **C** ≤ **V**
+- 1 ≤ **E** ≤ **V**∗(**V**−1)
 ___
 ## Testing
 |S.r. No.|Sample Input|Sample Output|
 |:-|:-|:-:|
 |#0|1<br>4<br>3<br>5<br>1 2<br>2 3<br>3 4<br>4 1<br>1 3| TRUE |
-|#1|
-1<br>4<br>3<br>14<br>2 4<br>3 4<br>2 1<br>3 2<br>3 4<br>1 3<br>1 3<br>4 1<br>4 1<br>3 2<br>2 4<br>2 3<br>2 4<br>4 1|FALSE|
+|#1|1<br>4<br>3<br>14<br>2 4<br>3 4<br>2 1<br>3 2<br>3 4<br>1 3<br>1 3<br>4 1<br>4 1<br>3 2<br>2 4<br>2 3<br>2 4<br>4 1|FALSE|
 ___
 ## EXPLANATION
-**C**-Colorable: If the graph can be colored with at most **C** colors such that no two adjacent vertices of the graph are colored with the same color or every edge is adjacent to two different colors. i.e 𝛘(**G**) ≤ **C**
-Chromatic Number or 𝛘(**G**): Smallest number (**C**) of colors needed to color a graph **G** and and is **C**-Colorable.
+- **C**-Colorable: If the graph can be colored with at most **C** colors such that no two adjacent vertices of the graph are colored with the same color or every edge is adjacent to two different colors. i.e 𝛘(**G**) ≤ **C**
+- Chromatic Number or 𝛘(**G**): Smallest number (**C**) of colors needed to color a graph **G** and and is **C**-Colorable.
 ___
 ## HINT
 Here coloring of a graph means assignment of colors to all vertices. Vertex are 1-based (vertext number starts with 1, not 0).
