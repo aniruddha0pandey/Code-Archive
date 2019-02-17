@@ -2,6 +2,10 @@
 
 int
 main ( void ) {
+#ifndef ONLINE_JUDGE
+	freopen("in.put", "r", stdin);
+	// freopen("out.put", "w", stdout);
+#endif
   ofstream fout( getenv("OUTPUT_PATH") );
   boost();
   int input, result;
