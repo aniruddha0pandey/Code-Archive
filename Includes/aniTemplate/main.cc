@@ -4,7 +4,7 @@ int
 main ( void ) {
   ofstream fout( getenv("OUTPUT_PATH") );
   boost();
-  int input, result;
+  int input, output;
   scan( input );
 
   int arr[] = {};
@@ -12,7 +12,7 @@ main ( void ) {
   vector<int> vect(arr, arr + n);
 
   srand((unsigned)time(NULL));
-  fout << result << "\n";
+  fout << output << "\n";
   fout.close();
   return 0;
 }
