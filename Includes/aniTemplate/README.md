@@ -25,3 +25,12 @@ int main ( void ) {
   return 0;
 }
 ```
+```c
+#include <fstream>
+
+int main ( void ) {
+  ofstream fout( getenv("OUTPUT_PATH") );
+  
+  fout << output << "\n";
+  fout.close();
+```
