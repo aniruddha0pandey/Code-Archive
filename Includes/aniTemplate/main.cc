@@ -2,7 +2,6 @@
 
 int
 main ( void ) {
-  ofstream fout( getenv("OUTPUT_PATH") );
   boost();
   int input, output;
   scan( input );
@@ -12,7 +11,5 @@ main ( void ) {
   vector<int> vect(arr, arr + n);
 
   srand((unsigned)time(NULL));
-  fout << output << "\n";
-  fout.close();
   return 0;
 }
