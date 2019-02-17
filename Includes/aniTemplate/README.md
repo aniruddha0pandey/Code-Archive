@@ -18,7 +18,7 @@ int main ( void ) {
 int main ( void ) {
 #ifndef ONLINE_JUDGE
   freopen("in.put", "r", stdin);
-  // freopen("out.put", "w", stdout);
+  freopen("out.put", "w", stdout);
 #endif
   std::cin >> input;
   std::cout << output;
