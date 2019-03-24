@@ -1,10 +1,10 @@
 Yashwant Singh is an aspiring graduate student. He's writing a research papers on hardware virtualization for subsystem modulation. After compeletion of his research he realized, immature of him he has written the whole paper in one go into a single paragraph. Now he has to curate the whole paragraph into the syntax of a research paper. The syntax specifies the following rules:
 
-1. The whole string should be converted to a column.
-2. Each line in a column should characters equal or less than the specifed character limit.
-3. The characters should fill the whole line, distributing spaces equally.
-	3.1 Minimum one space is required between words.
-	3.2 Distribution weight is higher towards end of the line.
+**1.** The whole string should be converted to a column.  
+**2.** Each line in a column should characters equal or less than the specifed character limit.  
+**3.** The characters should fill the whole line, distributing spaces equally.  
+	3.1 Minimum one space is required between words.  
+	3.2 Distribution weight is higher towards end of the line.  
 
 Example:
 
