@@ -13,7 +13,7 @@ Convenience is one of the factors to consider when building Linux distributions;
 > Should be converted to a para like this
 
 <img src="https://raw.githubusercontent.com/aniruddha0pandey/Code-Archive/master/Author/Syntax_Mafia/para.PNG" 
-alt="foreground" width="400" height="400" border="10" />
+alt="foreground" width="600" height="400" border="10" />
 
 Six or nine squares drawn on the ground, inside where player will stand behind a defined line and toss a small piece of rock or pebble into a selected square, then they had to hop across the squares, skipping the one with the rock, completing the whole path uptill end and returning the same way. No stepping on lines, or you were considered out.
 
