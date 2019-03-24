@@ -7,7 +7,7 @@ Yashwant Singh is an aspiring graduate student. He's writing a research papers o
 	**3.2** Distribution weight is higher towards end of the line.  
 	**3.3** If only one word is present in the line, it should float to the left.  
 
-##Example
+## Example
 
 Convenience is one of the factors to consider when building Linux distributions; thus, the inclusion of preinstalled packages is possible for various applications. Containers, in contrast, are designed for lightweight virtualization to run many identical machines as possible with the least amount of overhead in terms of memory, disk and CPU. To cater for the low overhead requirements that provide faster spin-up time, vendors have developed container-optimized builds. The result is minimalistic distributions containing the minimum requirements for containers to run.
 
@@ -16,29 +16,29 @@ Convenience is one of the factors to consider when building Linux distributions;
 <img src="https://raw.githubusercontent.com/aniruddha0pandey/Code-Archive/master/Author/Syntax_Mafia/para.PNG" alt="foreground" width="400" height="300" border="10" />
 
 ---------
-##Input:
+## Input:
 First line takes Test Case **T**.  
 Second line contains an integer **L** denoting the Character Limit for all lines.  
   
 For multiple test case, program will be run separately.
 
 ---------
-##Output:
+## Output:
 Print the Column made according to syntax specified.
 
 ---------
-##Constraints:
+## Constraints:
 1 ≤ **T** ≤ 30  
 20 ≤ **L** ≤ 40  
 **Word Length** ≤ **L**
 
 ---------
-##Example:
-####Input:
+## Example:
+#### Input:
 1  
 30  
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid nunc honeste dicit? Huc et illuc, Torquate, vos versetis licet, nihil in hac praeclara epistula scriptum ab Epicuro congruens et conveniens decretis eius reperietis. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris, divitiae, valitudo; Ergo instituto veterum, quo etiam Stoici utuntur, hinc capiamus exordium. Aliter homines, aliter philosophos loqui putas oportere? Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Duo Reges: constructio interrete. Scripta sane et multa et polita, sed nescio quo pacto auctoritatem oratio non habet. Alii rursum isdem a principiis omne officium referent aut ad voluptatem aut ad non dolendum aut ad prima illa secundum naturam optinenda. Non pugnem cum homine, cur tantum habeat in natura boni; Summus dolor plures dies manere non potest? Quamquam scripsit artem rhetoricam Cleanthes, Chrysippus etiam, sed sic, ut, si quis obmutescere concupierit, nihil aliud legere debeat. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Id enim volumus, id contendimus, ut officii fructus sit ipsum officium.
-####Output:
+#### Output:
 <img src="https://raw.githubusercontent.com/aniruddha0pandey/Code-Archive/master/Author/Syntax_Mafia/sol.PNG" alt="foreground" border="10" />  
  
 ---------
