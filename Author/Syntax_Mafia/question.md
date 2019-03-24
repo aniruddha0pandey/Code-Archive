@@ -12,8 +12,7 @@ Convenience is one of the factors to consider when building Linux distributions;
 
 > Should be converted to a para like this &#8595;
 
-<img src="https://raw.githubusercontent.com/aniruddha0pandey/Code-Archive/master/Author/Syntax_Mafia/para.PNG" 
-alt="foreground" width="600" height="400" border="10" />
+<img src="https://raw.githubusercontent.com/aniruddha0pandey/Code-Archive/master/Author/Syntax_Mafia/para.PNG" alt="foreground" width="600" height="400" border="10" />
 
 ---------
 ##Input:
