@@ -1,16 +1,17 @@
-Yashwant Singh is an aspiring graduate student. He's writing a research papers on hardware virtualization for subsystem modulation. After compeletion of his research he realized, immature of him he has written the whole paper in one go into a single paragraph. Now he has to curate the whole paragraph into the syntax of a research paper. The syntax specifies the following rules:
+Yashwant Singh is an aspiring graduate student. He's writing a research papers on hardware virtualization for subsystem modulation. After completion of his research he realized, immature of him he has written the whole paper in one go into a single paragraph. Now he has to curate the whole paragraph into the syntax of a research paper. The syntax specifies the following rules:
 
 1. The whole string should be converted to a column.
-2. Each line in a column should characters equal or less than the specifed character limit.
+2. Each line in a column should characters equal or less than the specified character limit.
 3. The characters should fill the whole line, distributing spaces equally.  
 	**3.1** Minimum one space is required between words.  
 	**3.2** Distribution weight is higher towards end of the line.  
+	**3.3** If only one word is present in the line, it should float to the left.  
 
-Example:
+##Example
 
 Convenience is one of the factors to consider when building Linux distributions; thus, the inclusion of preinstalled packages is possible for various applications. Containers, in contrast, are designed for lightweight virtualization to run many identical machines as possible with the least amount of overhead in terms of memory, disk and CPU. To cater for the low overhead requirements that provide faster spin-up time, vendors have developed container-optimized builds. The result is minimalistic distributions containing the minimum requirements for containers to run.
 
-> Should be converted to a para like this &#8595;
+> Should be converted to a para like this ↓
 
 <img src="https://raw.githubusercontent.com/aniruddha0pandey/Code-Archive/master/Author/Syntax_Mafia/para.PNG" alt="foreground" width="400" height="300" border="10" />
 
@@ -23,12 +24,13 @@ For multiple test case, program will be run separately.
 
 ---------
 ##Output:
-Print the Column made according to syntax specifed.
+Print the Column made according to syntax specified.
 
 ---------
 ##Constraints:
 1 ≤ **T** ≤ 30  
 20 ≤ **L** ≤ 40  
+**Word Length** ≤ **L**
 
 ---------
 ##Example:
