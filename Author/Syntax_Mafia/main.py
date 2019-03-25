@@ -59,15 +59,14 @@ if __name__ == '__main__':
 	file = open("./tests/test1.in", "r")
 
 	try: test_cases, line_limit, string = int(file.readline()), int(file.readline()), file.readline()
-	except IOError: test_cases, line_limit, string = int(input()), int(input()), input()
+	except IOError: test_cases, line_limit, string = int(input())
 	except ValueError: test_cases, line_limit, string = 1, 30, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid nunc honeste dicit? Huc et illuc, Torquate, vos versetis licet, nihil in hac praeclara epistula scriptum ab Epicuro congruens et conveniens decretis eius reperietis. Roges enim Aristonem, bonane ei videantur haec: vacuitas doloris, divitiae, valitudo; Ergo instituto veterum, quo etiam Stoici utuntur, hinc capiamus exordium. Aliter homines, aliter philosophos loqui putas oportere? Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Duo Reges: constructio interrete. Scripta sane et multa et polita, sed nescio quo pacto auctoritatem oratio non habet. Alii rursum isdem a principiis omne officium referent aut ad voluptatem aut ad non dolendum aut ad prima illa secundum naturam optinenda. Non pugnem cum homine, cur tantum habeat in natura boni; Summus dolor plures dies manere non potest? Quamquam scripsit artem rhetoricam Cleanthes, Chrysippus etiam, sed sic, ut, si quis obmutescere concupierit, nihil aliud legere debeat. Habes, inquam, Cato, formam eorum, de quibus loquor, philosophorum. Id enim volumus, id contendimus, ut officii fructus sit ipsum officium."
 
 	file = open("./tests/test1.out", "w")
 
-	test_cases = int(input())
 	while test_cases > 0:
-		line_limit = int(input())
-		string = input()
+		line_limit = line_limit or int(input())
+		string = string or input()
 
 		words = tuple(re.split(r'(\s)', string))
 		lines = limitfy(words, line_limit)
