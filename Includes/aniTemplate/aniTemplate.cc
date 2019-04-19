@@ -2,10 +2,11 @@
 
 
 
-template <class T> inline T
-gcd (T x, T y) {
-  if (!y) return x;
-  return gcd(y, x%y);
+template<class T> inline T 
+gcd (const T x, const T y) {
+    if (x < 0)return gcd(-x, y);
+    if (y < 0)return gcd(x, -y);
+    return (!y) ? x : gcd(y, x%y);
 }
 
 inline void
