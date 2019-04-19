@@ -1,5 +1,5 @@
 ```bash
-$ ./main < in.put > out.put
+$ ./main < test.in > test.out
 ```
 ```c
 #include <fstream>
