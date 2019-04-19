@@ -4,8 +4,8 @@
 
 template<class T> inline T 
 gcd (const T x, const T y) {
-    if (x < 0)return gcd(-x, y);
-    if (y < 0)return gcd(x, -y);
+    if (x < 0) return gcd(-x, y);
+    if (y < 0) return gcd(x, -y);
     return (!y) ? x : gcd(y, x%y);
 }
 
