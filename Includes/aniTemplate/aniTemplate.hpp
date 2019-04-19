@@ -20,7 +20,7 @@ const double high = 1e10;
 const double lowInt = INT_MIN;
 const double highInt = INT_MAX;
 
-const long long inf = (long long) 1e18;
+const ll inf = (ll) 1e18; // 9223372036854775807
 
 
 
