@@ -3,7 +3,7 @@
 int
 main ( void ) {
   boost();
-  int input, output;
+  uint64_t input, output;
   scan( input );
 
   int arr[] = {};
