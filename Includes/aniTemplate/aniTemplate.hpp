@@ -2,7 +2,7 @@
 
 #define ll long long
 #define ull unsigned long long
-#define ud unsigned double
+#define ld_t long double
 
 #define sz(x) (ll)(x).size()
 #define max(x,y) (x>y)?x:y
