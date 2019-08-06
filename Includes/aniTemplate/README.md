@@ -33,4 +33,5 @@ int main ( void ) {
   
   fout << output << "\n";
   fout.close();
+}
 ```
