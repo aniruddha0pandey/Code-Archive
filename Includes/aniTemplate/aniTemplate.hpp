@@ -22,7 +22,7 @@ const double lowInt = INT_MIN;
 const double highInt = INT_MAX;
 
 const ll inf = (ll) 1e18; // 9223372036854775807
-
+const int INFINITY = 0x3f3f3f3f;
 
 
 
