@@ -17,7 +17,7 @@ void subsequence ( std::vector<char> v, int i ) {
 	int n = std::pow(2, i + 1) - 1;
 	for ( int k = 0; k < n; ++k ) {
 		std::cout << "{ ";
-		for ( int q = 0; q < (k + 1); ++q ) {
+		for ( int q = 0; q < (1 << q); ++q ) {
 			if ( (k + 1) & (1 << q) )
 				std::cout << v[q] << " ";
 		} (std::cout << "} ");
