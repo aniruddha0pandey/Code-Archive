@@ -11,5 +11,7 @@ main ( void ) {
   vector<int> vect(arr, arr + n);
 
   srand((unsigned)time(NULL));
+
+  // std::cout << __gcd(6, 20) << std::endl;
   return 0;
 }

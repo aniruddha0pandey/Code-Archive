@@ -3,6 +3,59 @@
 
 #include <bits/stdc++.h>
 
+#define gP(n) (prime[n >> 6] & (1 << ((n >> 1) & 31)))
+#define rP(n) (prime[n >> 6] &= ~(1 << ((n >> 1) & 31)))
+bool checkPrime(int x) { return (x & 1) && gP(x); }
+
+std::vector<int>
+bitset_sieve ( int n ) {
+	unsigned int prime[n / 64];
+	std::vector<int> primes3;
+	memset(prime, -1, sizeof(prime));
+
+    for (int i = 3; i * i < n; i += 2)
+        if (gP(i)) {
+            for (unsigned int j = i * i; j < n; j += 2 * i)
+                rP(j);
+        }
+
+    for (int i = 2; i < n; i++)
+        if (checkPrime(i))
+            primes3.push_back(i)
+
+    return primes3;
+}
+
+std::vector<int> 
+manupulated_sieve_of_eratosthenes ( int n ) {
+	// this vector saves the counter of the power of smallest factor
+	std::vector<int> spf_power(n+1);
+	// this vector saves the smallest factor
+	std::vector<int> spf(n+1);
+	std::vector<int> primes;
+	std::vector<bool> isComposite(n+1);
+	std::fill(isComposite.begin(), isComposite.end(), false);
+	
+	for (int i = 2; i <= n; ++i) {
+		if (!isComposite[i]) {
+			primes.push_back(i);
+			spf_power[i] = 1;
+			spf[i] = i;
+		}
+		for (int j = 0; j < primes.size() && i * primes[j] <= n; ++j) {
+			isComposite[i * primes[j]] = true;
+			spf[i * primes[j]] = primes[j];
+			if (i % primes[j] == 0) {
+				spf_power[i * primes[j]] = spf_power[i] + 1;
+				break;
+			}
+			else spf_power[i * primes[j]] = 1;
+		}
+	}
+
+	return primes;
+}
+
 std::vector<int> 
 optimized_sieve_of_eratosthenes ( int n ) {
 	std::vector<int> primes;
