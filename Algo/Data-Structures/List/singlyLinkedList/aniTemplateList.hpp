@@ -8,12 +8,12 @@ Node {
 };
 
 class 
-LinkedList {
+List {
 private:
 	std::unique_ptr<Node> head;
 public:
 	int length;
-	LinkedList() : head(nullptr), length(0) {}
+	List() : head(nullptr), length(0) {}
 
 	// Utility Functions
 	bool push( int data );
@@ -21,10 +21,10 @@ public:
 	Node* getHead();
 	void clean();
 
-	~LinkedList() { clean(); }
+	~List() { clean(); }
 
-	friend int getLength ( const LinkedList& list );
-	friend std::ostream& operator<<( std::ostream& os, const LinkedList& list );
+	friend int getLength ( const List& list );
+	friend std::ostream& operator<<( std::ostream& os, const List& list );
 };
 
 

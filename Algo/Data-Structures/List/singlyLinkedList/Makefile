@@ -1,4 +1,4 @@
-# Makefile for singlyLinkedList
+# Makefile for singlyList
 
 CXX = g++
 CXXFLAGS = -Wall -g

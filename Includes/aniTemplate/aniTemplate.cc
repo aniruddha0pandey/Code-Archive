@@ -1,12 +1,12 @@
 #include <aniTemplate.hpp>
 
 
-
-template<class T> inline 
-T gcd (const T x, const T y) {
-    if (x < 0) return gcd(-x, y);
-    if (y < 0) return gcd(x, -y);
-    return (!y) ? x : gcd(y, x%y);
+// https://github.com/lemire/Code-used-on-Daniel-Lemire-s-blog/blob/master/2013/12/26/gcd.cpp
+inline 
+unsigned gcd (const unsigned x, const unsigned y) {
+    if ( x == 0 ) return y;
+    if ( y == 0 ) return x;
+    return (y) ? gcd(y, x%y) : x;
 }
 
 inline 

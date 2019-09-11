@@ -1,8 +1,7 @@
 #include "aniTemplateList.hpp"
-void 
 
-printStatus ( const LinkedList& list )
-{
+void 
+printStatus ( const List& list ) {
 	std::cout << "\n[LIST STATUS] -----------------------\n";
 	std::cout << "List Size: [" << list.length << "] | ";
 	std::cout << "List: [ " << list << "]\n";
@@ -19,7 +18,7 @@ main ( int argc, char** argv ) {
 	}
 
 	// Intilizing List ///////////////////////
-	LinkedList list;
+	List list;
 	//////////////////////////////////////////
 
 	// Operation (1.0) ///////////////////////
@@ -32,17 +31,16 @@ main ( int argc, char** argv ) {
 	// Operation (2.0) ///////////////////////
 	std::tuple <bool, int> poppedNode = list.pop();
 	bool isNotEmpty = std::get<0>(poppedNode);
-	int poppedNodeData = std::get<1>(poppedNode);
 	if ( isNotEmpty ) {
 		std::cout << "\nPopped Node Data: [";
-		std::cout << poppedNodeData << "]\n";
+		std::cout << std::get<1>(poppedNode) << "]\n";
 	}
 
 	printStatus( list );
 	//////////////////////////////////////////
 
 	// Operation (3.0) ///////////////////////
-	Node* head = list.getHead();
+	auto head = list.getHead();
 	std::cout << "\nHead Data: [";
 	std::cout << head->data << "]\n";
 	//////////////////////////////////////////

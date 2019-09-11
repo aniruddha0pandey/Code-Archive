@@ -28,6 +28,11 @@ getNode (int newData) {
 	return newNode;
 }
 
+//--- END DATA STRUCTURES ---//
+
+
+//--- START UTILITY FUNCTIONS ---//
+
 unsigned int 
 length (linkedList* list) {
 	node* current = list -> head;
@@ -90,11 +95,11 @@ pushTail (linkedList* list, int newData) {
 	return true;
 }
 
-void*
+node*
 popHead (linkedList* list) {
 	if (length(list) <= 0) {
 		printf("ERROR       : Empty List!\n");
-		return;
+		exit(0);
 	}
 	node* tmp = list -> head;
 	node* current = tmp -> next;
@@ -107,14 +112,14 @@ void*
 popTail (linkedList* list) {
 	if (length(list) <= 0) {
 		printf("ERROR       : Empty List!\n");
-		return;
-	} if (length(list) == 1) {
+		exit(0);
+	} else if (length(list) == 1) {
 		node* tmp = list -> head;
 		free(tmp);
 		list -> head = NULL;
 		list -> tail = NULL;
 		printf("Description : Empty List!\n");
-		return;
+		exit(0);
 	}
 	node* tmp = list -> head;
 	node* current = tmp;
@@ -126,15 +131,31 @@ popTail (linkedList* list) {
 	list -> tail = current;
 }
 
+void*
+popRandom (linkedList* list, int findData) {
+	node* tmp = list -> head;
+	node* current = tmp;
+	while ( current -> next -> next -> data == findData &&  ) {
+		current = current -> next;
+	}
+	current = current -> next -> next;
+	free(current -> next);
+}
+
 void
-assignList (linkedList* list, int LB, int UB) {
+assignList (linkedList* list, int LB, int UB, int inc) {
 	int i;
-	for (i = UB; i > LB; )
-		if (!pushHead(list, i--))
-			printf("ERROR       : Memory Overflow!\n");
-	for (i = UB; i > LB; )
-			if (!pushTail(list, i--))
+	if ( inc == 1 ) {
+		for (i = UB; i > LB; )
+			if (!pushHead(list, i--)) {
 				printf("ERROR       : Memory Overflow!\n");
+			}
+	} else {
+		for (i = UB; i > LB; )
+				if (!pushTail(list, i--)) {
+					printf("ERROR       : Memory Overflow!\n");		
+				}
+	}
 }
 
 void
@@ -147,18 +168,47 @@ retractList (linkedList* list, int t_head, int t_tail) {
 		printf("Freed Node  : 0x%p\n", popTail(list));
 }
 
+void reverseList ( linkedList * list ) {
+	node* previous = list -> head -> next;
+	node* current = list -> head -> next -> next;
+	node* tmp = list -> head -> next -> next -> next;
+	int firstNodeData = previous -> data;
+	previous = NULL;
+	while ( current != NULL ) {
+		previous = previous -> next;
+		current = current -> next;
+	}
+}
+
+void 
+reverseHalfList ( linkedList* list ) {
+	node* previous = head;
+	node* current = head -> next;
+	node* tmp;
+
+	int len = length( linkedList* list );
+	for ( int i; i < len/2; ) {
+		tmp = current -> next;
+		current -> next = previous;
+		previous = current;
+		current = tmp;
+	}
+
+}
+
 int main (void) {
 	linkedList* myList = listInit();
 
 	printf("Size of List: %d\n", length(myList));
 	printList(myList);
 
-	assignList(myList, 0, 10);
+	assignList(myList, 0, 10, 1);
 
 	printf("Size of List: %d\n", length(myList));
 	printList(myList);
 
-	retractList(myList, 2, 3);
+	// retractList(myList, 2, 3);
+	popRandom(myList, 3);
 
 	printf("Size of List: %d\n", length(myList));
 	printList(myList);
