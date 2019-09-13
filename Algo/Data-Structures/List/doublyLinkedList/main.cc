@@ -1,6 +1,3 @@
-// https://www.codechef.com/problems/DOUBLYLL
-
-
 #include <bits/stdc++.h>
 
 struct
@@ -15,8 +12,6 @@ Node {
 };
 
 
-
-
 class List {
 private:
 	int length;
@@ -24,7 +19,7 @@ private:
 	std::shared_ptr<Node> tail;
 public:
 
-	//  Member functions
+	/////////////////////////////// Member functions ///////////////////////////////
 
 	List () : 
 		head( nullptr ),
@@ -33,20 +28,19 @@ public:
 
 	~List() { clean(); }
 
-
-
-	// Modifiers
-
-	int 
-	size () {
-		return length;
+	void clean () {
+		while ( head != nullptr ) {
+			head = std::move(head->next);
+			length--;
+		}
 	}
 
-	bool 
-	push_front ( int data ) {
+	/////////////////////////////// Modifiers ///////////////////////////////
+
+	bool push_front ( int data ) {
 		auto newNode( std::make_shared<Node>(data) );
 		if ( newNode == nullptr ) return false;
-		if ( head == nullptr ) {
+		if ( head == nullptr && tail == nullptr ) {
 			head = newNode;
 			tail = newNode;
 		} else {
@@ -58,43 +52,106 @@ public:
 		return true;
 	}
 
-	void 
-	clean () {
-		while ( head != nullptr ) {
-			head = std::move(head->next);
-			length--;
+	bool push_back ( int data ) {
+		auto newNode( std::make_shared<Node>(data) );
+		if ( newNode == nullptr ) return false;
+		if ( head == nullptr && tail == nullptr ) {
+			head = newNode;
+			tail = newNode;
+		} else {
+			tail->next = newNode;
+			newNode->prev = tail;
+			tail = newNode;
 		}
+		length++;
+		return true;
 	}
 
+	std::tuple<bool, int> pop_head () {
+		if ( length < 1 ) return std::make_tuple(false, 0);
+		auto firstNode = head;
+		int data = firstNode->data;
+		head = std::move(firstNode->next);
+		length--;
+		return std::make_tuple(true, data);
+	}
 
-	// Observers
+	std::tuple<bool, int> pop_tail () {
+		if ( length < 1 ) return std::make_tuple(false, 0);
+		auto lastNode = tail;
+		int data = lastNode->data;
+		tail = std::move(lastNode->prev);
+		length--;
+		return std::make_tuple(true, data);
+	}
 
-	void 
-	print_forward () {
-		auto current = head.get();
+	bool find ( int data ) {
+		auto current = this->head;
+		while ( current != nullptr ) {
+			if ( current->data == data )
+				return true;
+			current = current->next;
+		}
+		return false;
+	}
+
+	bool erase ( int data ) {
+		if ( length < 1 ) 
+			return false;
+
+		if ( data == head->data ) 
+			return false;
+
+		if ( data == tail->data ) 
+			return false;
+
+		auto slow_ptr = this->head;
+		auto fast_ptr = this->head->next;
+
+		while ( fast_ptr != nullptr ) {
+			if ( fast_ptr->data == data ) {
+				fast_ptr->next->prev = slow_ptr;
+				slow_ptr->next = std::move(fast_ptr->next);
+				return true;
+			}
+			slow_ptr = slow_ptr->next;
+			fast_ptr = fast_ptr->next;
+		}
+
+		return false;
+	}
+
+	/////////////////////////////// Observers ///////////////////////////////
+
+	int size () { return length; }
+
+	bool isEmpty () {
+		if ( length ) return true;
+		else return false;
+	}
+
+	void print_forward () {
+		auto current = this->head;
 	    while( current != nullptr ) {
 	        std::cout << current->data << ' ';
-	        current = current->next.get();
+	        current = current->next;
 	    } puts("");
 	}
 
-	void 
-	print_backward () {
-		auto current = tail.get();
+	void print_backward () {
+		auto current = this->tail;
 	    while( current != nullptr ) {
 	        std::cout << current->data << ' ';
-	        current = current->prev.get();
+	        current = current->prev;
 	    } puts("");
 	}
 
-	// friend std::ostream& operator<<( std::ostream& os, const List& list ) {
-	//     auto current = list.head.get();
-	//     while( current != nullptr ) {
-	//         os << current->data << ' ';
-	//         current = current->next.get();
-	//     }
-	//     return os;
-	// }
+	/////////////////////////////// Utility ///////////////////////////////
+
+	bool 
+	reverse () {
+		return false;
+	}
 
 };
 
@@ -102,52 +159,7 @@ int
 main ( void ) {
 	List list;
 	
-	// I - check for empty condition
-	// if ( list.isEmpty() ) std::cout << "true";
-	// else std::cout << "false";
-	
-	// S - returns size 
-	// std::cout << list.size() << std::endl;
-	
-	// AF O - adds first element o, and prints List traversed both ways
-	// list.push_front(1);
-	// list.push_front(2);
-	// list.push_front(3);
-	// list.print_forward();
-	// list.print_backward();
-
-	// AL O - adds last element o, and prints List traversed both ways
-	// list.push_back(x);
-	// std::cout << forward::list << std::endl;
-	// std::cout << backward::list << std::endl;
-	
-	// RF - removes the first element, returns “ListEmptyException” if empty, and print list prints “ListEmpty”
-	// if ( std::get<0>(list.popHead()) )
-		// std::cout << "ListEmpty" << std::endl;
-	// else {
-		// std::cout << forward::list << std::endl;
-		// std::cout << backward::list << std::endl;
-	// }
-	
-	// RL - removes the last element returns “ListEmptyException” if empty, and print list prints “ListEmpty”
-	// if ( std::get<0>(list.popTail()) )
-	// 	std::cout << "ListEmpty" << std::endl;
-	// else {
-	// 	std::cout << forward::list << std::endl;
-	// 	std::cout << backward::list << std::endl;
-	// }
-	
-	// F - returns the first element in the list
-	// std::cout << std::get<1>(list.popHead()) << std::endl;
-	
-	// L - returns the last element in the list
-	// std::cout << std::get<1>(list.popTail()) << std::endl;
-	
-	// FIND x - prints the element x if x is present in S, else prints Null
-	// if ( list.find(x) )
-	// 	std::cout << x << std::endl;
-	// else
-	// 	std::cout << "NULL" << std::endl;
 
 	return 0;
 }
+
