@@ -57,7 +57,7 @@ public:
 	bool isEmpty () {
 		if ( this->top == nullptr ) 
 			return true;
-		return false;		
+		return false;
 	}
 
 	int size () {

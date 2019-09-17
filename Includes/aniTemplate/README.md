@@ -1,5 +1,8 @@
 ```bash
-$ ./main < test.in > test.out
+$ ./main | diff out -
+```
+```bash
+$ ./main < in > out
 ```
 ```c
 #include <fstream>
