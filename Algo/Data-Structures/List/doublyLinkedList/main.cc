@@ -148,9 +148,27 @@ public:
 
 	/////////////////////////////// Utility ///////////////////////////////
 
+	// bool 
+	// reverse () {
+		
+	// }
+
+	std::shared_ptr<Node> 
+	getMidNode (  ) {
+		auto midNode = this->head;
+		double len = this->length;
+		unsigned int mid = 1;
+		while ( !(mid == (int)std::ceil(len/2)) ) {
+			mid = mid + 1;
+			midNode = midNode->next;
+		}
+		return midNode;
+	}
+
 	bool 
-	reverse () {
-		return false;
+	deleteMidNode (  ) {
+		auto deleted = erase( getMidNode()->data );
+		return deleted;
 	}
 
 };
@@ -162,4 +180,3 @@ main ( void ) {
 
 	return 0;
 }
-
