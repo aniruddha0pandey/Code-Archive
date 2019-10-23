@@ -2,6 +2,7 @@
 
 
 // https://github.com/lemire/Code-used-on-Daniel-Lemire-s-blog/blob/master/2013/12/26/gcd.cpp
+
 inline 
 unsigned gcd (const unsigned x, const unsigned y) {
     if ( x == 0 ) return y;
