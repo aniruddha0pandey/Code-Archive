@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-int 
+unsigned long long 
 ways ( int n ) {
 	return (n <= 1) ? 1 : ways(n - 1) + ways(n - 2);
 }

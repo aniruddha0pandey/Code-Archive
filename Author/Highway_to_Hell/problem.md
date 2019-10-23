@@ -12,8 +12,8 @@ He can only overtake 1 or 2 cars at a time. Print the number of ways he can over
 For each testcase, output in a single line on how many ways there are to overtake cars.
 
 ### Constraints
-- 1 ≤ **T** ≤ 1000
-- 1 ≤ **n** ≤ 100
+- 1 ≤ **T** ≤ 100
+- 1 ≤ **n** ≤ 30
 
 ### Sample Input:
 4  
