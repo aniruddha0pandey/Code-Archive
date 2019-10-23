@@ -5,7 +5,7 @@ Sachin is an aspiring Android Developer. A hardworking person who help others an
 He can only overtake 1 or 2 cars at a time. Print the number of ways he can overtake from nearest to furthest car, thus helping Sachin bro.
 
 
-###Input:
+#Input:
 - First line will contain **T**, number of testcases. Then the testcases follow. 
 - Each testcase contains of a single line of input **N**, the number of cars ahead of his car.
 
