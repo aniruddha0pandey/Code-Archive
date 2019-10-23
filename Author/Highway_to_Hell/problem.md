@@ -24,7 +24,7 @@ For each testcase, output in a single line on how many ways there are to overtak
 
 ### EXPLANATION:
 Considering Sachins' car index to be 0, the nearest car index to be 1 and so on...
-#### For test case 1:
+#### For Sample Case:
 **[0 1]** -> 1 way  
 **[0 1 2] [0 2]** -> 2 ways  
 **[0 1 2 3] [0 1 3] [0 2 3]** -> 3 ways  
