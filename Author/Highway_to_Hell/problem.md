@@ -1,5 +1,7 @@
 Sachin is an aspiring Android Developer. A hardworking person who help others and live his life full of ethics and aesthetics. One weekday while commuting back from office he took pizza along the way for his bros, but now he is stuck in traffic jam and anymore delay would result in cold pizza which we all agree doesn't taste good 🤮. He decided to overtake the cars in front of him. Help Sachin bro to find all the ways he can do that. 
 
+![Highway to Hell](./res/highway.png "Highway to Hell")
+
 He can only overtake 1 or 2 cars at a time. Print the number of ways he can overtake from nearest to furthest car, thus helping Sachin bro.
 
 ###Input:
@@ -10,8 +12,8 @@ He can only overtake 1 or 2 cars at a time. Print the number of ways he can over
 For each testcase, output in a single line on how many ways there are to overtake cars.
 
 ###Constraints
-- $1 \leq T \leq 1000$
-- $1 \leq N \leq 100$
+- 1 ≤ **T** ≤ 1000
+- 1 ≤ **n** ≤ 100
 
 ###Sample Input:
 4  
