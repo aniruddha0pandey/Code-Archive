@@ -1,4 +1,8 @@
 ```bash
+$ g++ -DJUDGE -x c++ -std=gnu++14 -O2 -Wl,--stack=67108864 [source-file] -o [source-file-without-extension].exe
+```
+
+```bash
 $ ./main | diff out -
 ```
 ```bash
