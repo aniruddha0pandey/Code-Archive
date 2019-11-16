@@ -18,17 +18,17 @@ For each testcase, output in a single line the maximum number of nuts that can b
 - 1 < **n** ≤ 30
 - 1 ≤ **k** < **n**
 
-## Sample #1:
+## Sample Case #1:
 |INPUT|OUTPUT|
 |-|:-:|
 |1 5<br />S N N S N|2|
 
-## Sample #2:
+## Sample Case #2:
 |INPUT|OUTPUT|
 |-|:-:|
 |2 6<br />N N S S N S|3|
 
-## Sample Input #3:
+## Sample  Case #3:
 |INPUT|OUTPUT|
 |-|:-:|
 |3 6<br />S N S N N S|3|
