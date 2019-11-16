@@ -16,7 +16,7 @@ For each testcase, output in a single line the maximum number of nuts that can b
 ## Constraints
 - 1 ≤ **t** ≤ 10
 - 1 ≤ **n** ≤ 30
-- 1 ≤ **k** ≤ **n**
+- 1 ≤ **k** < **n**
 
 ## Sample Input #1:
 ```
