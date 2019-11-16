@@ -8,7 +8,7 @@ Help these squirrels by finding the maximum number of nuts. Happy Squirreling!
 
 ## Input:
 - First line will contain **t**, number of testcases. Then the testcases follows. 
-- Each testcase contains two lines of input. First line contains **k**, unit distant of nut from the squirrel and **n** size of the list. Second line contains the list containing Squirrels(**S**) and Nuts(**N**).
+- Each testcase contains two lines of input. First line contains **k**, unit distant of nut from the squirrel and **n** size of the list, separated by spaces. Second line contains the list containing Squirrels(**S**) and Nuts(**N**).
 
 ## Output:
 For each testcase, output in a single line the maximum number of nuts that can be found.
