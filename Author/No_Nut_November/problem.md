@@ -1,6 +1,6 @@
 Winter is Coming. It's going to be a harsh supercool slumber for the rodents, and ~tree rats~ squirrels are no exception. The native Indian northern palm squirrel hides nuts by burying them into the ground. These nuts later used as preparation for cold weather when otherwise the food will be scarce. <sub>([Nowak, 1999](https://books.google.co.in/books?id=T37sFCl43E8C&lpg=PR9&ots=rnBe0VYPHY&dq=Nowak%2C%20R.%201999.%20Walker's%20Mam%C2%ADmals%20of%20the%20World.%20Bal%C2%ADti%C2%ADmore%3A%20Johns%20Hop%C2%ADkins%20Uni%C2%ADver%C2%ADsity%20Press.&lr&pg=PR9#v=onepage&q&f=false))</sub>
 
-These squirrels have prepared their annual cache nuts for this winter but unfortunately forgot where they've burrowed them. Help these squirrels by finding the maximum number of nuts while following some "Ground" Rules:
+These squirrels have prepared their annual cache nuts for this winter but unfortunately forgot where they've burrowed them. Help these squirrels by finding the maximum number of nuts while following some *Ground Rules*:
 1. Each squirrel can carry only one nut at a time.
 2. A squirrel cannot carry any nut which is **k** units away from the squirrel. 
 
