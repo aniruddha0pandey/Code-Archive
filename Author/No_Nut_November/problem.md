@@ -1,10 +1,11 @@
-Winter is Coming. It's going to be a harsh supercool slumber for the rodents, and ~tree rats~ squirrels are no exception. The native Indian northern palm squirrel hides nuts by burying them into the ground. These nuts later used as preparation for cold weather when otherwise the food will be scarce. <sub>([Nowak, 1999](https://books.google.co.in/books?id=T37sFCl43E8C&lpg=PR9&ots=rnBe0VYPHY&dq=Nowak%2C%20R.%201999.%20Walker's%20Mam%C2%ADmals%20of%20the%20World.%20Bal%C2%ADti%C2%ADmore%3A%20Johns%20Hop%C2%ADkins%20Uni%C2%ADver%C2%ADsity%20Press.&lr&pg=PR9#v=onepage&q&f=false))</sub>
+Winter is Coming. It's going to be a harsh supercool slumber for the rodents, and ~tree rats~ squirrels are no exception. The native Indian northern palm squirrel hides nuts by burying them into the ground. These nuts later used as preparation for cold weather when otherwise the food will be scarce. <sub><a href="https://books.google.co.in/books?id=T37sFCl43E8C&printsec=frontcover">(Nowak, 1999)</a></sub>
+
 
 These squirrels have prepared their annual cache nuts for this winter but unfortunately forgot where they've burrowed them. Help these squirrels by finding the maximum number of nuts while following some *Ground Rules*:
 1. Each squirrel can carry only one nut at a time.
 2. A squirrel cannot carry any nut which is **k** units away from the squirrel. 
 
- Happy Squirreling!
+Happy Squirreling!
 
 ## Input:
 - First line will contain **t**, number of testcases. Then the testcases follows. 
@@ -18,20 +19,37 @@ For each testcase, output in a single line the maximum number of nuts that can b
 - 1 < **n** ≤ 30
 - 1 ≤ **k** < **n**
 
-## Sample Case #1:
-|INPUT|OUTPUT|
-|-|:-:|
-|1 5<br />S N N S N|2|
+## Sample Cases
 
-## Sample Case #2:
-|INPUT|OUTPUT|
-|-|:-:|
-|2 6<br />N N S S N S|3|
-
-## Sample  Case #3:
-|INPUT|OUTPUT|
-|-|:-:|
-|3 6<br />S N S N N S|3|
+<table>
+  <thead>
+    <tr>
+      <th>S.R. NO.</th>
+      <th>INPUT</th>
+      <th>OUTPUT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>#1</td>
+      <td><pre>1 5
+S N N S N</pre></td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>#2</td>
+      <td><pre>2 6
+N N S S N S</pre></td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>#3</td>
+      <td><pre>3 6
+S N S N N S</pre></td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
 
 ## EXPLANATION:
 ### For Sample Case #1:
