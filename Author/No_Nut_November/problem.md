@@ -15,7 +15,7 @@ Happy Squirreling!
 For each testcase, output in a single line the maximum number of nuts that can be found.
 
 ## Constraints
-- 1 ≤ **t** ≤ 10
+- 1 ≤ **t** ≤ 100
 - 1 < **n** ≤ 30
 - 1 ≤ **k** < **n**
 
