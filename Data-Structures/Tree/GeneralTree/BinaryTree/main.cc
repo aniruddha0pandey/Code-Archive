@@ -1,5 +1,3 @@
-// https://daveparillo.github.io/intermediate-cpp/trees/trees.html
-
 #include <bits/stdc++.h>
 
 typedef int TYPE;
@@ -14,17 +12,6 @@ Node {
 		left ( nullptr ),
 		right ( nullptr ) {} 
 };
-
-void 
-print ( std::queue<std::shared_ptr<Node<TYPE>>>& q ) {
-	std::cout << "QUEQE: ";
-	std::queue<std::shared_ptr<Node<TYPE>>> new_q = q;
-	while ( not new_q.empty() ) {
-		std::cout << new_q.front()->data << " ";
-		new_q.pop();
-	}
-	std::cout << std::endl;
-}
 
 template <typename T> class 
 Tree {
@@ -41,6 +28,17 @@ public:
 	
 	~Tree () noexcept = default;
 
+	std::shared_ptr<Node<T>> 
+	getRoot () {
+		return this->root;
+	}
+
+	int 
+	getHeight ( std::shared_ptr<Node<T>> node ) {
+		if ( not node ) return 0;
+		else return ( std::max( getHeight( node->left ), getHeight( node->right ) ) ) + 1;
+	}
+
 	// Modifiers //
 
 	// bool insert_by_side ( const std::string& data, const char& left, const char& right ) {
@@ -48,7 +46,7 @@ public:
 	// }
 
 	bool 
-	insert_by_level ( const std::vector<int>& v, std::queue<std::shared_ptr<Node<TYPE>>>& q, bool call = false ) {
+	insert_by_level ( const std::vector<int>& v, std::queue<std::shared_ptr<Node<TYPE>>>& q ) {
 
 		int i = 0;
 		if ( not root ) {
@@ -81,26 +79,6 @@ public:
 
 		} while ( q.pop(), not q.empty() );
 
-		// if ( call ) {
-		// 	std::cout << root->data 
-		// 			  << std::endl;
-		// 	std::cout << root->left->data << " " 
-		// 			  << root->right->data 
-		// 			  << std::endl;
-		// 	std::cout << root->left->left->data << " "
-		// 			  << root->left->right->data << " " 
-		// 			  << root->right->left->data << " " 
-		// 			  << root->right->right->data 
-		// 			  << std::endl;
-		// 	std::cout << root->left->left->left->data << " " 
-		// 			  << root->left->left->right->data << " " 
-		// 			  << root->left->right->left->data << " " 
-		// 			  << root->left->right->right->data << " " 
-		// 			  << root->right->left->left->data << " " 
-		// 			  << root->right->left->right->data 
-		// 			  << std::endl;
-		// }
-
 		return true;
 	}
 
@@ -117,40 +95,45 @@ public:
 
 	// } 
 	
-	std::shared_ptr<Node<T>> 
-	getRoot () {
-		return this->root;
-	}
 
-	// Depth First
 	void 
 	inOrder ( std::shared_ptr<Node<T>> node ) {
-		if ( not node ) return;
+		if ( not node ) return ;
 		inOrder( node->left );
 		std::cout << node->data << " ";
 		inOrder( node->right );
 	}
 
-	// Depth First
-	void preOrder ( std::shared_ptr<Node<T>> node ) {
-		if ( not node ) return;
+	void 
+	preOrder ( std::shared_ptr<Node<T>> node ) {
+		if ( not node ) return ;
 		std::cout << node->data << " ";
 		preOrder( node->left );
 		preOrder( node->right );
 	}
 
-	// Depth First
-	void postOrder ( std::shared_ptr<Node<T>> node ) {
-		if ( not node ) return;
+	void 
+	postOrder ( std::shared_ptr<Node<T>> node ) {
+		if ( not node ) return ;
 		postOrder( node->left );
 		postOrder( node->right );
 		std::cout << node->data << " ";
 	}
 
-	// Breadth First
-	// void levelOrder () {
+	void 
+	printLevel ( std::shared_ptr<Node<T>> node, unsigned int level = 1 ) {
+		if ( not node ) return ;
+		if ( level == 1 ) std::cout << node->data << " ";
+		printLevel( node->left, level - 1 );
+		printLevel( node->right, level - 1 );
+	}
 
-	// }
+	void 
+	levelOrder ( std::shared_ptr<Node<T>> node ) {
+		int height = getHeight( root );
+		for ( int i = 1; i <= height; ++i ) 
+			printLevel( node, i );
+	}
 
 	// void spiralOrder () {
 		
@@ -179,13 +162,14 @@ main ( void ) {
 	char delimiter = ' ';
 	std::queue<std::shared_ptr<Node<TYPE>>> q;
 
-	input = "1 2 3 4 5";
+	input = "1 2 3 4 5 6 7 8";
 	t.insert_by_level( tokenize( input, delimiter ), q);
 
 	std::shared_ptr<Node<TYPE>> root = t.getRoot();
 	t.inOrder( root ); std::cout << std::endl;
 	t.preOrder( root ); std::cout << std::endl;
 	t.postOrder( root ); std::cout << std::endl;
+	t.levelOrder( root ); std::cout << std::endl;
 
 	// char left = 'L', right = 'R';
 	// input = "6 3 L 6 8 R 3 1 L 3 5 R 1 3 X 5 6 X";
@@ -193,5 +177,4 @@ main ( void ) {
 	
 	return 0;
 }
-
 
