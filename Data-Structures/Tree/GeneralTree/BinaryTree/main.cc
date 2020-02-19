@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 
-typedef int TYPE;
-
 template <typename T> struct 
 Node {
 	T data;
@@ -46,7 +44,7 @@ public:
 	// }
 
 	bool 
-	insert_by_level ( const std::vector<int>& v, std::queue<std::shared_ptr<Node<TYPE>>>& q ) {
+	insert_by_level ( const std::vector<T>& v, std::queue<std::shared_ptr<Node<T>>>& q ) {
 
 		int i = 0;
 		if ( not root ) {
@@ -141,29 +139,19 @@ public:
 
 };
 
-inline std::vector<TYPE>
-tokenize ( const std::string& input, char delimiter ) {
-	std::vector<TYPE> v;
-	std::stringstream ss(input);
-	std::string words;
-
-	while ( std::getline(ss, words, delimiter) ) 
-		v.push_back( std::stoi(words) );
-
-	return v;
-}
+typedef int TYPE;
 
 int 
 main ( void ) {
 
+	int n; std::cin >> n;
+	TYPE input;
+	std::vector<TYPE> v;
+	while ( n-- ) std::cin >> input, v.push_back( input );
+
 	Tree<TYPE> t;
-
-	std::string input;
-	char delimiter = ' ';
 	std::queue<std::shared_ptr<Node<TYPE>>> q;
-
-	input = "1 2 3 4 5 6 7 8";
-	t.insert_by_level( tokenize( input, delimiter ), q);
+	t.insert_by_level( v, q );
 
 	std::shared_ptr<Node<TYPE>> root = t.getRoot();
 	t.inOrder( root ); std::cout << std::endl;
@@ -174,7 +162,8 @@ main ( void ) {
 	// char left = 'L', right = 'R';
 	// input = "6 3 L 6 8 R 3 1 L 3 5 R 1 3 X 5 6 X";
 	// t.insert_by_side( input, left, right );
-	
+
 	return 0;
 }
+
 

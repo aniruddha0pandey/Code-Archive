@@ -5,15 +5,13 @@ Queue {
 private:
 	struct Node {
 		T data;
-		std::shared_ptr<Node> prev;
-		std::shared_ptr<Node> next;
+		std::shared_ptr<Node> prev, next;
 		Node ( T data ) :
 			data( data ),
 			prev( nullptr ),
 			next( nullptr ) {} };
 	unsigned int len;
-	std::shared_ptr<Node> front;
-	std::shared_ptr<Node> rear;
+	std::shared_ptr<Node> front, rear;
 public:
 	Queue () : 
 		front( nullptr ),
@@ -36,7 +34,7 @@ public:
 
 		len = len + 1;
 
-		return true;				
+		return true;
 	}
 
 	std::tuple<bool, T> deQueue () {
@@ -48,9 +46,11 @@ public:
 		return std::make_tuple(true, data);
 	}
 	
-	// bool isEmpty () {
-
-	// }
+	bool isEmpty () {
+		return ( size() > 0 )
+			? false
+			: true;
+	}
 	
 	const unsigned size() {
 		return this->len;
@@ -67,7 +67,7 @@ public:
 	friend std::ostream& operator<< ( std::ostream& os, const Queue<T>& q ) {
 	    auto curr( q.front.get() );
 	    while( curr != nullptr ) {
-	        os << curr->data << " ";
+	        os << " | " << curr->data << " | ";
 	        curr = curr->next.get();
 	    }
 	    return os;
@@ -77,15 +77,14 @@ public:
 
 int 
 main ( void ) {
+	int data;
 	Queue<int> q;
 
-	q.enQueue( 1 );
-	q.enQueue( 2 );
-	q.enQueue( 3 );
-	q.enQueue( 4 );
+	while ( std::cin >> data ) 
+		q.enQueue(data);
 
-
-	q.deQueue();
+	std::cout << q << std::endl;
+	std::cout << std::get<1>(q.deQueue()) << std::endl;
 	std::cout << q << std::endl;
 
 	return 0;

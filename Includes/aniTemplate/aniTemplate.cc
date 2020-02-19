@@ -1,5 +1,6 @@
 #include <aniTemplate.hpp>
 
+typedef int TYPE
 
 // https://github.com/lemire/Code-used-on-Daniel-Lemire-s-blog/blob/master/2013/12/26/gcd.cpp
 
@@ -30,5 +31,16 @@ void scan (int& n = 0) {
 // inline void print(int a) { char s[20]; int i=0; do { s[i++]=a%10+'0'; a/=10; } while(a); i--; while(i>=0) pc(s[i--]); pc('\n'); }
 // inline void prlong(ll a) { char s[20]; int i=0; do { s[i++]=a%10+'0'; a/=10; } while(a); i--; while(i>=0) pc(s[i--]); pc('\n'); }
 
+// covert delimiter separated string numbers to vector of TYPE
+inline std::vector<TYPE>
+tokenize ( const std::string& input, char delimiter ) {
+    std::vector<TYPE> v;
+    std::stringstream ss(input);
+    std::string words;
 
+    while ( std::getline(ss, words, delimiter) ) 
+        v.push_back( std::stoi(words) );
+
+    return v;
+}
 
