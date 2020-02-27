@@ -18,7 +18,7 @@ public:
 	// Utility Functions
 	bool push( int data );
 	std::tuple<bool, int> pop();
-	Node* getHead();
+	Node* getHead( const List& list );
 	void clean();
 
 	~List() { clean(); }

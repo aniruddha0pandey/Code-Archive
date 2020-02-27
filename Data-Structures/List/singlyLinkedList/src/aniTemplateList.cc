@@ -1,4 +1,4 @@
-#include "aniTemplateList.hpp"
+#include "../lib/aniTemplateList.hpp"
 
 #define END 0xCCCCCCCC
 
@@ -29,9 +29,9 @@ List::pop () {
 	return std::make_tuple(true, data);
 }
 
-std::unique_ptr<Node> 
-List::getHead (  ) {
-	return head.get();
+Node* 
+List::getHead ( const List& list ) {
+	return list.head.get();
 }
 
 void 

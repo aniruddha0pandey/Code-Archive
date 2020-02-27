@@ -1,4 +1,4 @@
-#include "aniTemplateList.hpp"
+#include "../lib/aniTemplateList.hpp"
 
 void 
 printStatus ( const List& list ) {
@@ -40,7 +40,7 @@ main ( int argc, char** argv ) {
 	//////////////////////////////////////////
 
 	// Operation (3.0) ///////////////////////
-	auto head = list.getHead();
+	auto head = list.getHead( list );
 	std::cout << "\nHead Data: [";
 	std::cout << head->data << "]\n";
 	//////////////////////////////////////////

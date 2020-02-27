@@ -1,5 +1,14 @@
+### Build
 ```
-$ make clean # Clean
-$ make all # Build
-$ bin/output < in
+$ make all
+```
+
+### Test
+```
+$ bin/output < test/in
+```
+
+### Clean
+```
+$ make clean
 ```
