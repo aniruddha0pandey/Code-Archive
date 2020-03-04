@@ -3,8 +3,8 @@
 template <typename T> struct 
 Node {
 	T data;
-	std::shared_ptr<Node<T>> left;
-	std::shared_ptr<Node<T>> right;
+	std::shared_ptr<Node> left;
+	std::shared_ptr<Node> right;
 	Node ( T data ) :
 		data ( data ),
 		left ( nullptr ),
@@ -27,9 +27,7 @@ public:
 	~Tree () noexcept = default;
 
 	std::shared_ptr<Node<T>> 
-	getRoot () {
-		return this->root;
-	}
+	getRoot () { return root; }
 
 	int 
 	getHeight ( std::shared_ptr<Node<T>> node ) {
@@ -44,7 +42,9 @@ public:
 	// }
 
 	bool 
-	insert_by_level ( const std::vector<T>& data, std::queue<std::shared_ptr<Node<T>>>& q ) {
+	insert_by_level ( const std::vector<T>& data ) {
+
+		std::queue<std::shared_ptr<Node<T>>> q;
 
 		int i = 0;
 		if ( not root ) {
@@ -80,34 +80,33 @@ public:
 		return true;
 	}
 
-	std::pair<bool, T> 
-	remove ( T key ) {
-		// std::queue<std::shared_ptr<Node<T>>>& q;
-		// std::shared_ptr<Node<T>> keyNode;
-		// std::shared_ptr<Node<T>> lastNode;
+	std::shared_ptr<Node<T>> 
+	getRightMostParentNode ( std::shared_ptr<Node<T>> node ) {
+		if ( not node->right->right or not node->left->left ) return node;
+		else return getRightMostParentNode( node->right );
+	}
 
-		// auto node = root;
+	void  
+	getKeyNode ( std::shared_ptr<Node<T>> node, const T& key, std::shared_ptr<Node<T>>& keyNode ) {
+		if ( not node ) return ;
+		if ( node->data == key ) keyNode = node;
+		getKeyNode( node->left, key, keyNode );
+		getKeyNode( node->right, key, keyNode );
+	}
+
+	bool 
+	remove ( const T& key ) {
 		
-		// if ( node->data == key ) keyNode = node;
-		// lastNode = node;
+		std::shared_ptr<Node<T>> keyNode = nullptr;
+		getKeyNode( root, key, keyNode );
 
-		// node = node->left;
+		auto rightMostParentNode = getRightMostParentNode( root );
 
-		// do {
-		// 	auto node = q.front();
-		// 	if ( node->data == key )
-		// 		keyNode = node;
+		keyNode->data = rightMostParentNode->right->data;
 
+		rightMostParentNode->right = nullptr;
 
-		// 	lastNode = node;
-		// } while ( q.pop(), not q.empty() );
-
-		// std::cout << typeid(root).name() << std::endl;
-		auto node = root->left;
-		node.reset();
-
-
-		return std::make_pair( true, 0 );
+		return true;
 	}
 
 	// Utility //
@@ -118,8 +117,11 @@ public:
 	// void eulerTour () {
 
 	// } 
-	
 
+	// void spiralOrder () {
+		
+	// }
+	
 	void 
 	inOrder ( std::shared_ptr<Node<T>> node ) {
 		if ( not node ) return ;
@@ -154,14 +156,10 @@ public:
 
 	void 
 	levelOrder ( std::shared_ptr<Node<T>> node ) {
-		int height = getHeight( root );
+		int height = getHeight( node );
 		for ( int i = 1; i <= height; ++i ) 
 			printLevel( node, i );
 	}
-
-	// void spiralOrder () {
-		
-	// }
 
 };
 
@@ -174,15 +172,13 @@ main ( void ) {
 	std::vector<TYPE> v;
 	int n; std::cin >> n;
 	while ( n-- ) std::cin >> input, v.push_back( input );
-	int e; std::cin >> e;
 
 	Tree<TYPE> t;
-	std::queue<std::shared_ptr<Node<TYPE>>> q;
-	t.insert_by_level( v, q );
+	t.insert_by_level( v );
 
-	std::pair<bool, TYPE> element = t.remove( e );
-	if ( element.first ) std::cout << element.second << std::endl;
-	else std::cout << "Element not Found" << std::endl;
+	int e; std::cin >> e;
+	bool exists = t.remove( e );
+	if ( not exists ) std::cout << "Not Found" << std::endl;
 	
 	std::shared_ptr<Node<TYPE>> root = t.getRoot();
 	t.inOrder( root ); std::cout << std::endl;
