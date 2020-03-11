@@ -1,37 +1,54 @@
+// bash
+// $ make main && ./main < in > out && subl ./out
+
 #include <bits/stdc++.h>
 
 template<typename T> class 
 AdjacencyList {
 private:
 
+	std::vector< std::vector<bool> > grid;
+	int n;
+
 public:
 
-	AdjacencyList() : {}
-	~AdjacencyList() noexcept = default;
+	AdjacencyList ( int n ) : n( n ) {
+		grid.resize( n );
+	    for ( int i = 0; i < n; ++i ) {
+	        grid[i].resize( n );
+	    }
+	}
 
 	void 
-	push ( int v1, int v2 ) {
-		std::vector<std::list<int>> l;
-		v[ v1 ].push_back( v2 );
+	insert ( T e1, T e2 ) {
+		grid[ e1 ][ e2 ] = grid[ e2 ][ e1 ] = true;
+	}
+
+	void 
+	dfs () {
+		for ( int i = 0; i < n; ++i ) {
+			for ( int j = 0; j < n; ++j ) {
+				std::cout << grid[ i ][ j ] << " ";
+			} puts(" ");
+		}
 	}
 
 };
 
 int 
 main ( void ) {
+	
+	int n, m; std::cin >> n >> m;
 
-	AdjacencyList<int> g;
+	AdjacencyList<int> g(n);
 	
-	int n, m;
-	std::cin >> n >> m;
-	
-	int v1, v2;
+	int edge1, edge2;
 	while ( m-- ) {
-		std::cin >> v1 >> v2;
-		g.push( v1, v2 );
+		std::cin >> edge1 >> edge2;
+		g.insert( edge1, edge2 );
 	}
 
-	std::cout << g.dfs() << std::endl;
+	g.dfs();
 
 	return 0;
 }

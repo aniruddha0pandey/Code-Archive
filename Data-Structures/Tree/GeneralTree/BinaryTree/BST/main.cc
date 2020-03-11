@@ -1,3 +1,5 @@
+// clear && make main && ./main < in > out && subl ./out
+
 #include <bits/stdc++.h>
 
 template<typename T> struct 
@@ -48,18 +50,31 @@ public:
 	}
 
 	void 
-	inOrderTraverseSuccessor ( std::shared_ptr<Node<T>> node, std::vector<std::shared_ptr<Node<T>>>& inOrderList ) {
+	inOrderTraverseSuccessor ( std::shared_ptr<Node<T>> node, std::vector<std::shared_ptr<Node<T>>>& parent, const T& key, std::vector<std::shared_ptr<Node<T>>>& inOrderList ) {
+		
 		if ( not node ) return ;
-		inOrderTraverseSuccessor( node->left, inOrderList );
+		
+		inOrderTraverseSuccessor( node->left, parent, key, inOrderList );
+		
 		inOrderList.push_back( node );
-		inOrderTraverseSuccessor( node->right, inOrderList );
+		
+		if ( node->left )
+			if ( key == node->data )
+				parent.push_back( node );
+		
+		if ( node->right )
+			if ( key == node->data )
+				parent.push_back( node );
+		
+		inOrderTraverseSuccessor( node->right, parent, key, inOrderList );
 	}
 
 	std::shared_ptr<Node<T>> 
-	getInorderSuccessorNode ( std::shared_ptr<Node<T>> root, const T& key ) {
+	getInorderSuccessorNode ( std::shared_ptr<Node<T>> root, std::shared_ptr<Node<T>>& inOrderSuccessorParentNode, const T& key ) {
 		
 		std::vector<std::shared_ptr<Node<T>>> inOrderList;
-		inOrderTraverseSuccessor( root, inOrderList );
+		std::vector<std::shared_ptr<Node<T>>> parent;
+		inOrderTraverseSuccessor( root, parent, key, inOrderList );
 		
 		int successorIndex;
 		for ( int i = 0; i < inOrderList.size(); ++i ) 
@@ -67,24 +82,9 @@ public:
 				successorIndex = i + 1;
 				break;
 			}
+
+		inOrderSuccessorParentNode = parent.front();
 		return inOrderList[ successorIndex ];
-	}
-
-	void 
-	inOrderTraverseSuccessorParent ( std::shared_ptr<Node<T>> node, const T& key, std::shared_ptr<Node<T>>& successorParentNode ) {
-		if ( not node ) return ;
-		inOrderTraverseSuccessorParent( node->left, key, successorParentNode );
-		if ( node->right and node->left ) {
-			std::cout << node->data << std::endl;
-		}
-		inOrderTraverseSuccessorParent( node->right, key, successorParentNode );
-	}
-
-	std::shared_ptr<Node<T>> 
-	getInOrderSuccessorParentNode ( std::shared_ptr<Node<T>> root, const T& key ) {
-		std::shared_ptr<Node<T>> successorParentNode;
-		inOrderTraverseSuccessorParent( root, key, successorParentNode );
-		return successorParentNode;
 	}
 
 	std::shared_ptr<Node<T>> 
@@ -92,37 +92,33 @@ public:
 
 		// Key is on the Leaf Node
 		if (  key == node->data and not node->left and not node->right  ) {
-			std::cout << "1" << std::endl;
 			return nullptr;
 		}
 
 		// Key is on parent node with two children
 		else if ( key == node->data and node->left and node->right ) {
-			std::cout << "2" << std::endl;
 
-			auto inorderSuccessorNode = getInorderSuccessorNode( root, key );
-			node->data = inorderSuccessorNode->data;
+			std::shared_ptr<Node<T>> successorParentNode;
+			auto successorNode = ( key > root->data )
+				? getInorderSuccessorNode( root->right, successorParentNode, key )
+				: getInorderSuccessorNode( root->left, successorParentNode, key );
 
-			auto inOrderSuccessorParentNode = getInOrderSuccessorParentNode( root, node->data );
+			if ( successorParentNode->right->data == successorNode->data )
+				successorParentNode->right = nullptr;
+			else if ( successorParentNode->left->data == successorNode->data )
+				successorParentNode->left = nullptr;
 
-			// std::cout << inOrderSuccessorParentNode->data << std::endl;
-
-			// if ( inOrderSuccessorParentNode->right->data == node->data )
-			// 	inOrderSuccessorParentNode->right = nullptr;
-			// else if ( inOrderSuccessorParentNode->left->data == node->data )
-			// 	inOrderSuccessorParentNode->left = nullptr;
+			node->data = successorNode->data;
 
 		} 
 
 		// Key is on parent node with one children on left
 		else if ( key == node->data and node->left and not node->right ) {
-			std::cout << "3" << std::endl;
 			return nullptr;
 		} 
 
 		// Key is on parent node with one children on right
 		else if ( key == node->data and not node->left and node->right ) {
-			std::cout << "4" << std::endl;
 			return nullptr;
 		} 
 
