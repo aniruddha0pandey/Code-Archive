@@ -25,12 +25,17 @@ public:
 	}
 
 	void 
-	dfs () {
+	print () {
 		for ( int i = 0; i < n; ++i ) {
 			for ( int j = 0; j < n; ++j ) {
 				std::cout << grid[ i ][ j ] << " ";
 			} puts(" ");
 		}
+	}
+
+	void 
+	dfs () {
+
 	}
 
 	void 
@@ -52,6 +57,8 @@ main ( void ) {
 		std::cin >> edge1 >> edge2;
 		g.insert( edge1, edge2 );
 	}
+
+	g.print();
 
 	g.dfs();
 	g.bfs();

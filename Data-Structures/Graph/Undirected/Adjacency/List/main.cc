@@ -21,13 +21,18 @@ public:
 	}
 
 	void 
-	dfs () {
+	print () {
 		for ( int i = 0; i < n; ++i ) {
 			std::cout << i << " ";
 			for ( auto const& e: list[ i ] ) {
 				std::cout << e << " ";
 			} puts("");
 		}
+	}
+
+	void 
+	dfs () {
+
 	}
 
 	void 
@@ -49,6 +54,8 @@ main ( void ) {
 		std::cin >> edge1 >> edge2;
 		g.insert( edge1, edge2 );
 	}
+
+	g.print();
 
 	g.dfs();
 	g.bfs();
