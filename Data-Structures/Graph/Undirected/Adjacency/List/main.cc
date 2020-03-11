@@ -7,30 +7,32 @@ template<typename T> class
 AdjacencyList {
 private:
 
-	std::vector< std::vector<bool> > grid;
-	int n;
+	std::vector< std::list<T> > list;
+	std::size_t n;
 
 public:
 
-	AdjacencyList ( int n ) : n( n ) {
-		grid.resize( n );
-	    for ( int i = 0; i < n; ++i ) {
-	        grid[i].resize( n );
-	    }
-	}
+	AdjacencyList ( int n ) : n( n ) { list.resize( n ); }
 
 	void 
 	insert ( T e1, T e2 ) {
-		grid[ e1 ][ e2 ] = grid[ e2 ][ e1 ] = true;
+		list[ e1 ].push_back( e2 );
+		list[ e2 ].push_back( e1 );
 	}
 
 	void 
 	dfs () {
 		for ( int i = 0; i < n; ++i ) {
-			for ( int j = 0; j < n; ++j ) {
-				std::cout << grid[ i ][ j ] << " ";
-			} puts(" ");
+			std::cout << i << " ";
+			for ( auto const& e: list[ i ] ) {
+				std::cout << e << " ";
+			} puts("");
 		}
+	}
+
+	void 
+	bfs () {
+
 	}
 
 };
@@ -40,7 +42,7 @@ main ( void ) {
 	
 	int n, m; std::cin >> n >> m;
 
-	AdjacencyList<int> g(n);
+	AdjacencyList<int> g( n );
 	
 	int edge1, edge2;
 	while ( m-- ) {
@@ -49,6 +51,7 @@ main ( void ) {
 	}
 
 	g.dfs();
+	g.bfs();
 
 	return 0;
 }

@@ -33,6 +33,11 @@ public:
 		}
 	}
 
+	void 
+	bfs () {
+
+	}
+
 };
 
 int 
@@ -49,6 +54,7 @@ main ( void ) {
 	}
 
 	g.dfs();
+	g.bfs();
 
 	return 0;
 }
