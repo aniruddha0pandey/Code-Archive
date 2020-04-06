@@ -1,5 +1,8 @@
-// bash
-// $ make main && ./main < in > out && subl ./out
+
+/*
+	$ // bash
+	$ make main && ./main < in > out && subl ./out
+*/
 
 #include <bits/stdc++.h>
 
@@ -14,9 +17,8 @@ public:
 
 	AdjacencyMatrix ( int n ) : n( n ) {
 		grid.resize( n );
-	    for ( int i = 0; i < n; ++i ) {
-	        grid[i].resize( n );
-	    }
+	    for ( int i = 0; i < n; ++i ) 
+	    	grid[i].resize( n );
 	}
 
 	void 
@@ -27,9 +29,9 @@ public:
 	void 
 	print () {
 		for ( int i = 0; i < n; ++i ) {
-			for ( int j = 0; j < n; ++j ) {
+			for ( int j = 0; j < n; ++j ) 
 				std::cout << grid[ i ][ j ] << " ";
-			} puts(" ");
+			std::cout << std::endl;
 		}
 	}
 

@@ -41,6 +41,11 @@ public:
 	// 	return true;
 	// }
 
+	void
+	reducer ( auto node ) {
+
+	}
+
 	bool 
 	insert_by_level ( const std::vector<T>& data ) {
 
